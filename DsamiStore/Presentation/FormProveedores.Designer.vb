@@ -31,8 +31,9 @@ Partial Class FormProveedores
         Me.dgvProveedores = New System.Windows.Forms.DataGridView()
         Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.razonSocial = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Documento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Empresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.editar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.eliminar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
@@ -108,7 +109,7 @@ Partial Class FormProveedores
         'dgvProveedores
         '
         Me.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProveedores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre, Me.razonSocial, Me.telefono, Me.editar, Me.eliminar})
+        Me.dgvProveedores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre, Me.Documento, Me.Empresa, Me.Direccion, Me.editar, Me.eliminar})
         Me.dgvProveedores.Location = New System.Drawing.Point(19, 23)
         Me.dgvProveedores.Name = "dgvProveedores"
         Me.dgvProveedores.RowHeadersWidth = 51
@@ -130,19 +131,26 @@ Partial Class FormProveedores
         Me.nombre.Name = "nombre"
         Me.nombre.Width = 125
         '
-        'razonSocial
+        'Documento
         '
-        Me.razonSocial.HeaderText = "Razon social"
-        Me.razonSocial.MinimumWidth = 6
-        Me.razonSocial.Name = "razonSocial"
-        Me.razonSocial.Width = 125
+        Me.Documento.HeaderText = "Documento"
+        Me.Documento.MinimumWidth = 6
+        Me.Documento.Name = "Documento"
+        Me.Documento.Width = 125
         '
-        'telefono
+        'Empresa
         '
-        Me.telefono.HeaderText = "Telefono"
-        Me.telefono.MinimumWidth = 6
-        Me.telefono.Name = "telefono"
-        Me.telefono.Width = 125
+        Me.Empresa.HeaderText = "Empresa"
+        Me.Empresa.MinimumWidth = 6
+        Me.Empresa.Name = "Empresa"
+        Me.Empresa.Width = 125
+        '
+        'Direccion
+        '
+        Me.Direccion.HeaderText = "Direccion"
+        Me.Direccion.MinimumWidth = 6
+        Me.Direccion.Name = "Direccion"
+        Me.Direccion.Width = 125
         '
         'editar
         '
@@ -184,8 +192,9 @@ Partial Class FormProveedores
     Friend WithEvents dgvProveedores As DataGridView
     Friend WithEvents codigo As DataGridViewTextBoxColumn
     Friend WithEvents nombre As DataGridViewTextBoxColumn
-    Friend WithEvents razonSocial As DataGridViewTextBoxColumn
-    Friend WithEvents telefono As DataGridViewTextBoxColumn
+    Friend WithEvents Documento As DataGridViewTextBoxColumn
+    Friend WithEvents Empresa As DataGridViewTextBoxColumn
+    Friend WithEvents Direccion As DataGridViewTextBoxColumn
     Friend WithEvents editar As DataGridViewTextBoxColumn
     Friend WithEvents eliminar As DataGridViewTextBoxColumn
 End Class

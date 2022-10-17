@@ -32,8 +32,8 @@ Partial Class Principal
         Me.panelPrincipal = New System.Windows.Forms.Panel()
         Me.PanelMenu = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.panelSecciones = New System.Windows.Forms.Panel()
         Me.IconButton7 = New FontAwesome.Sharp.IconButton()
+        Me.panelSecciones = New System.Windows.Forms.Panel()
         Me.PanelMenu.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -167,14 +167,6 @@ Partial Class Principal
         Me.Panel1.Size = New System.Drawing.Size(1098, 68)
         Me.Panel1.TabIndex = 4
         '
-        'panelSecciones
-        '
-        Me.panelSecciones.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelSecciones.Location = New System.Drawing.Point(276, 68)
-        Me.panelSecciones.Name = "panelSecciones"
-        Me.panelSecciones.Size = New System.Drawing.Size(1098, 646)
-        Me.panelSecciones.TabIndex = 5
-        '
         'IconButton7
         '
         Me.IconButton7.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(94, Byte), Integer))
@@ -192,6 +184,14 @@ Partial Class Principal
         Me.IconButton7.Text = "Salir"
         Me.IconButton7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IconButton7.UseVisualStyleBackColor = False
+        '
+        'panelSecciones
+        '
+        Me.panelSecciones.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.panelSecciones.Location = New System.Drawing.Point(276, 68)
+        Me.panelSecciones.Name = "panelSecciones"
+        Me.panelSecciones.Size = New System.Drawing.Size(1098, 646)
+        Me.panelSecciones.TabIndex = 5
         '
         'Principal
         '

@@ -148,7 +148,25 @@ Public Class Proveedor
             If dr.HasRows Then
                 While dr.Read
                     i += 1
-
+                    listprov.Add(New Proveedor(
+                                 dr.Item("i_id_proveedor"),
+                                 dr.Item("v_direccion_ubicacion"),
+                                 dr.Item("v_razon_social_empresa"),
+                                 dr.Item("v_nombre_tipo_documento"),
+                                 dr.Item("v_valor_documento"),
+                                 dr.Item("v_nombre_pais"),
+                                 dr.Item("v_nombre_region"),
+                                 dr.Item("v_nombre_distrito"),
+                                 dr.Item("v_nombre_provincia"),
+                                  dr.Item("v_ruc_empresa"),
+                        dr.Item("i_id_persona"),
+                        dr.Item("v_nombre_persona"),
+                        dr.Item("v_apellido_paterno_persona"),
+                        dr.Item("v_apellido_materno_persona"),
+                        dr.Item("i_id_documento"),
+                        dr.Item("d_fecha_nacimiento_persona"),
+                        dr.Item("i_id_pais")
+                                   ))
                 End While
 
                 Return listprov

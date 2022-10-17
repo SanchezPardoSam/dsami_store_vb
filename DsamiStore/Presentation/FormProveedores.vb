@@ -11,8 +11,8 @@
             Dim i As Integer = 1
 
             For x = 0 To listProvee.Count - 1 Step 1
-                dgvProveedores.Rows.Add((x + 1).ToString(), listProvee(x).ApellidoPaterno,
-                                        listProvee(x).Ruc, listProvee(x).Empresa)
+                dgvProveedores.Rows.Add((x + 1).ToString(), listProvee(x).Nombre,
+                                        listProvee(x).Documento, listProvee(x).Empresa, listProvee(x).Direccion)
             Next
 
 
@@ -20,4 +20,6 @@
             MsgBox(ex.Message & " FORM ROLES")
         End Try
     End Sub
+
+
 End Class

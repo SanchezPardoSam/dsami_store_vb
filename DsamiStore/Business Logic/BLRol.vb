@@ -13,11 +13,11 @@ Public Class BLRol
     Public Function ConsultarRoles() As List(Of Roles)
 
         Try
-            Dim dr As New Roles
+            Dim dataRol As New Roles
 
-            Dim lr As List(Of Roles) = dr.ConsultarRoles()
+            Dim listaRol As List(Of Roles) = dataRol.ConsultarRoles()
 
-            Return lr
+            Return listaRol
 
         Catch ex As Exception
             MsgBox(ex.Message & " BLROLES")

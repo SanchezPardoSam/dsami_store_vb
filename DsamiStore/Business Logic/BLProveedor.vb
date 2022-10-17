@@ -2,11 +2,11 @@
     Public Function ConsultarProveedor() As List(Of Proveedor)
 
         Try
-            Dim dp As New Proveedor()
+            Dim dataProveedor As New Proveedor()
 
-            Dim lp As List(Of Proveedor) = dp.ConsultarProveedor()
+            Dim listaProveedor As List(Of Proveedor) = dataProveedor.ConsultarProveedor()
 
-            Return lp
+            Return listaProveedor
 
         Catch ex As Exception
             MsgBox(ex.Message & " BLProveedor")

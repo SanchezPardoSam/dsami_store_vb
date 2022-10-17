@@ -2,11 +2,11 @@
     Public Function ConsultarCategoria() As List(Of Categoria)
 
         Try
-            Dim dc As New Categoria
+            Dim dataCategoria As New Categoria
 
-            Dim lc As List(Of Categoria) = dc.ConsultarCategoria()
+            Dim listaCategoria As List(Of Categoria) = dataCategoria.ConsultarCategoria()
 
-            Return lc
+            Return listaCategoria
 
         Catch ex As Exception
             MsgBox(ex.Message & " BLCATEGORIA")

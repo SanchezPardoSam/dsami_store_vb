@@ -71,12 +71,12 @@ Public Class Principal
 	End Sub
 	Private Sub IconButton2_Click(sender As Object, e As EventArgs) Handles IconButton2.Click
 		buttonActive(sender, Color.FromArgb(34, 197, 94))
-		openForm(New FormProductos)
+		openForm(New FormProveedores)
 	End Sub
 
 	Private Sub IconButton3_Click(sender As Object, e As EventArgs) Handles IconButton3.Click
 		buttonActive(sender, Color.FromArgb(34, 197, 94))
-		openForm(New FormProveedores)
+		openForm(New FormProductos)
 	End Sub
 
 	Private Sub IconButton4_Click(sender As Object, e As EventArgs) Handles IconButton4.Click
@@ -95,6 +95,10 @@ Public Class Principal
 	End Sub
 
 	Private Sub IconButton7_Click(sender As Object, e As EventArgs) Handles IconButton7.Click
+
+	End Sub
+
+	Private Sub Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 	End Sub
 End Class

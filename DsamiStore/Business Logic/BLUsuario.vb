@@ -2,11 +2,11 @@
     Public Function ConsultarUsuarios() As List(Of Usuario)
 
         Try
-            Dim du As New Usuario
+            Dim dataUsuario As New Usuario
 
-            Dim lu As List(Of Usuario) = du.ConsultarUsuario()
+            Dim listaUsuarios As List(Of Usuario) = dataUsuario.ConsultarUsuario()
 
-            Return lu
+            Return listaUsuarios
 
         Catch ex As Exception
             MsgBox(ex.Message & " BLUSUARIO")
