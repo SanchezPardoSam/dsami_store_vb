@@ -4,17 +4,11 @@
 
     Public Function ConsultarUsuarios() As List(Of Usuario)
         Try
-<<<<<<< HEAD
-            Dim dataUsuario As New Usuario
 
-            Dim listaUsuarios As List(Of Usuario) = dataUsuario.ConsultarUsuario()
-
-            Return listaUsuarios
-=======
             Dim usuarios As List(Of Usuario) = _usuarioDato.ConsultarUsuario()
 
             Return usuarios
->>>>>>> 9f878442952440d451b6daf26aa8fdc0e682088b
+
 
         Catch ex As Exception
             MsgBox(ex.Message & " BLUSUARIO")
