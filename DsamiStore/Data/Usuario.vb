@@ -131,6 +131,71 @@ Public Class Usuario
         End Try
     End Function
 
+    Public Function EncontrarUsuariosCantidad(consulta As String, limite As Integer) As Integer
+        Try
+            Dim listClien As List(Of Roles)
+            listClien = New List(Of Roles)
+            Dim i As Integer = 0
+            conectar()
+            cmd = New SqlCommand("sp_usuario_listar_paginacion_count @consulta, @limite")
+            cmd.Parameters.AddWithValue("@consulta", consulta)
+            cmd.Parameters.AddWithValue("@limite", limite)
+
+            cmd.Connection = con
+
+            Return cmd.ExecuteScalar()
+
+        Catch ex As Exception
+            MsgBox(ex.Message & " USUARIO")
+            Return Nothing
+        Finally
+            con.Close()
+        End Try
+    End Function
+
+    Public Function EncontrarUsuarios(consulta As String, pagina As Integer, limite As Integer) As List(Of Usuario)
+        Try
+            Dim usuarios As List(Of Usuario) = New List(Of Usuario)
+            Dim i As Integer = 0
+
+            conectar()
+
+            cmd = New SqlCommand("sp_usuario_listar_paginacion @consulta, @pagina, @limite")
+            cmd.Parameters.AddWithValue("@consulta", consulta)
+            cmd.Parameters.AddWithValue("@pagina", pagina)
+            cmd.Parameters.AddWithValue("@limite", limite)
+
+            cmd.Connection = con
+
+            dr = cmd.ExecuteReader
+
+            If dr.HasRows Then
+                While dr.Read
+                    i += 1
+                    usuarios.Add(New Usuario(
+                            dr.Item("i_id_usuario"),
+                            dr.Item("v_username_usuario"),
+                            dr.Item("v_password_usuario"),
+                            dr.Item("i_id_empleado"),
+                            dr.Item("v_nombre_persona"),
+                            dr.Item("i_id_rol"),
+                            dr.Item("v_nombre_rol")
+                            ))
+                End While
+
+                Return usuarios
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message & " USUARIO")
+            Return Nothing
+        Finally
+            con.Close()
+        End Try
+    End Function
+
     Public Function EncontrarPorNombreUsuario(nombreUsuario As String) As Usuario
         Try
             Dim listUser As List(Of Usuario)
