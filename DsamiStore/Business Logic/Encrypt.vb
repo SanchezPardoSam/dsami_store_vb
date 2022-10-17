@@ -2,24 +2,43 @@
 Imports System.Text
 
 Public Class Encrypt
-    Public Function GetHash(theInput As String) As String
+    ' Hash an input string and return the hash as
+    ' a 32 character hexadecimal string.
+    Function generate(ByVal input As String) As String
+        ' Create a new instance of the MD5 object.
+        Dim md5Hasher As MD5 = MD5.Create()
 
-        Using hasher As MD5 = MD5.Create()    ' create hash object
+        ' Convert the input string to a byte array and compute the hash.
+        Dim data As Byte() = md5Hasher.ComputeHash(Encoding.Default.GetBytes(input))
 
-            ' Convert to byte array and get hash
-            Dim dbytes As Byte() =
-                 hasher.ComputeHash(Encoding.UTF8.GetBytes(theInput))
+        ' Create a new Stringbuilder to collect the bytes
+        ' and create a string.
+        Dim sBuilder As New StringBuilder()
 
-            ' sb to create string from bytes
-            Dim sBuilder As New StringBuilder()
+        ' Loop through each byte of the hashed data
+        ' and format each one as a hexadecimal string.
+        Dim i As Integer
+        For i = 0 To data.Length - 1
+            sBuilder.Append(data(i).ToString("x2"))
+        Next i
 
-            ' convert byte data to hex string
-            For n As Integer = 0 To dbytes.Length - 1
-                sBuilder.Append(dbytes(n).ToString("X2").ToLower)
-            Next n
+        ' Return the hexadecimal string.
+        Return sBuilder.ToString()
 
-            Return sBuilder.ToString()
-        End Using
+    End Function
 
+    ' Verify a hash against a string.
+    Function verify(ByVal input As String, ByVal hash As String) As Boolean
+        ' Hash the input.
+        Dim hashOfInput As String = generate(input)
+
+        ' Create a StringComparer an comare the hashes.
+        Dim comparer As StringComparer = StringComparer.OrdinalIgnoreCase
+
+        If 0 = comparer.Compare(hashOfInput, hash) Then
+            Return True
+        Else
+            Return False
+        End If
     End Function
 End Class
