@@ -94,4 +94,60 @@ Public Class Roles
         End Try
     End Function
 
+    Public Function EncontrarRolesCantidad(consulta As String, limite As Integer) As Integer
+        Try
+            Dim listClien As List(Of Roles)
+            listClien = New List(Of Roles)
+            Dim i As Integer = 0
+            conectar()
+            cmd = New SqlCommand("sp_rol_listar_paginacion_count @consulta, @limite")
+            cmd.Parameters.AddWithValue("@consulta", consulta)
+            cmd.Parameters.AddWithValue("@limite", limite)
+
+            cmd.Connection = con
+
+            Return cmd.ExecuteScalar()
+
+        Catch ex As Exception
+            MsgBox(ex.Message & " ROLES")
+            Return Nothing
+        Finally
+            con.Close()
+        End Try
+    End Function
+
+    Public Function EncontrarRoles(consulta As String, pagina As Integer, limite As Integer) As List(Of Roles)
+        Try
+            Dim listClien As List(Of Roles)
+            listClien = New List(Of Roles)
+            Dim i As Integer = 0
+
+            conectar()
+
+            cmd = New SqlCommand("sp_rol_listar_paginacion @consulta, @pagina, @limite")
+            cmd.Parameters.AddWithValue("@consulta", consulta)
+            cmd.Parameters.AddWithValue("@pagina", pagina)
+            cmd.Parameters.AddWithValue("@limite", limite)
+
+            cmd.Connection = con
+
+            dr = cmd.ExecuteReader
+
+            If dr.HasRows Then
+                While dr.Read
+                    listClien.Add(New Roles(dr.Item("i_id_rol").ToString, dr.Item("v_nombre_rol")))
+                End While
+
+                Return listClien
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message & " ROLES")
+            Return Nothing
+        Finally
+            con.Close()
+        End Try
+    End Function
 End Class

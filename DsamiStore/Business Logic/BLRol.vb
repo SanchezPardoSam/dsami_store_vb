@@ -1,6 +1,8 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class BLRol
+    Private _rolData As Roles = New Roles()
+
     Public Function InsertarRol(cod As String, nom As String)
         Dim rol As New Roles(cod, nom)
         If rol.InsertarRol(rol) = True Then
@@ -19,6 +21,28 @@ Public Class BLRol
 
             Return listaRol
 
+        Catch ex As Exception
+            MsgBox(ex.Message & " BLROLES")
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function ObtenerRolesCantidad(consulta As String, limite As Integer) As Integer
+        Try
+            Dim cantidad As Integer = _rolData.EncontrarRolesCantidad(consulta, limite)
+
+            Return cantidad
+        Catch ex As Exception
+            MsgBox(ex.Message & " BLROLES")
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function ObtenerRoles(consulta As String, pagina As Integer, limite As Integer) As List(Of Roles)
+        Try
+            Dim roles As List(Of Roles) = _rolData.EncontrarRoles(consulta, pagina, limite)
+
+            Return roles
         Catch ex As Exception
             MsgBox(ex.Message & " BLROLES")
             Return Nothing
