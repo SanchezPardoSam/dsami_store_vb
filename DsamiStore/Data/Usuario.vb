@@ -131,4 +131,44 @@ Public Class Usuario
         End Try
     End Function
 
+    Public Function EncontrarPorNombreUsuario(nombreUsuario As String) As Usuario
+        Try
+            Dim listUser As List(Of Usuario)
+            listUser = New List(Of Usuario)
+
+            conectar()
+
+            cmd = New SqlCommand("sp_usuario_encontrar_por_nombre_usuario @nombreUsuario")
+            cmd.Parameters.AddWithValue("@nombreUsuario", nombreUsuario)
+
+            cmd.Connection = con
+
+            dr = cmd.ExecuteReader
+
+            If dr.HasRows Then
+                While dr.Read
+                    listUser.Add(New Usuario(
+                            dr.Item("i_id_usuario"),
+                            dr.Item("v_username_usuario"),
+                            dr.Item("v_password_usuario"),
+                            dr.Item("i_id_empleado"),
+                            dr.Item("v_nombre_persona"),
+                            dr.Item("i_id_rol"),
+                            dr.Item("v_nombre_rol")
+                            ))
+                End While
+
+                Return listUser.Item(0)
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message & " Usuario")
+            Return Nothing
+        Finally
+            con.Close()
+        End Try
+    End Function
+
 End Class

@@ -1,13 +1,21 @@
 ﻿Imports System.Security.Principal
 
 Public Class Form1
-    Dim user As String = "adm"
-    Dim pass As String = "adm"
+    Private _usuarioNegocio As BLUsuario = New BLUsuario()
 
     Private Shared panelInicio As Form1
 
     Private CurrentForm As Form
 
+    Public Sub New()
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+
+        tbClave.PasswordChar = "*"
+    End Sub
     Public Function getInstance() As Form1
         If panelInicio Is Nothing Then
             Return New Form1
@@ -34,17 +42,20 @@ Public Class Form1
 
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-
-        If txtUsername.Text = "" Or txtPassword.Text = "" Then
+        If tbNombreUsuario.Text = "" Or tbClave.Text = "" Then
             MsgBox("Complete todos los campos")
-
-        ElseIf txtUsername.Text <> user Or txtPassword.Text <> pass Then
-            MsgBox("El usuario o contraseña incorrecto")
-
-        Else
-            Dim prin As New Principal
-            openForm(prin)
+            Return
         End If
+
+        Try
+            Dim usuario As Usuario = _usuarioNegocio.Ingresar(tbNombreUsuario.Text, tbClave.Text)
+
+            Dim prin As New Principal
+
+            openForm(prin)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
