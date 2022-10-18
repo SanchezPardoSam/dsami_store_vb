@@ -37,4 +37,15 @@
             Return Nothing
         End Try
     End Function
+
+    Public Function EliminarProductos(consulta As String) As Boolean
+        Try
+            Dim productos = _productoDato.EliminarProducto(consulta)
+
+            Return productos
+        Catch ex As Exception
+            MsgBox(ex.Message & " BLPRODUCTO")
+            Return Nothing
+        End Try
+    End Function
 End Class
