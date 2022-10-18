@@ -82,10 +82,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business Logic\BLCategoria.vb" />
+    <Compile Include="Business Logic\BLDistrito.vb" />
+    <Compile Include="Business Logic\BLDocumento.vb" />
     <Compile Include="Business Logic\BLEmpleado.vb" />
     <Compile Include="Business Logic\BLEmpresa.vb" />
+    <Compile Include="Business Logic\BLPais.vb" />
     <Compile Include="Business Logic\BLProducto.vb" />
     <Compile Include="Business Logic\BLProveedor.vb" />
+    <Compile Include="Business Logic\BLProvincia.vb" />
+    <Compile Include="Business Logic\BLRegion.vb" />
     <Compile Include="Business Logic\BLRol.vb" />
     <Compile Include="Business Logic\BLUsuario.vb" />
     <Compile Include="Data\Almacen.vb" />

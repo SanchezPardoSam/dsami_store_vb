@@ -39,7 +39,7 @@ Public Class Proveedor
         _ruc = ruc
     End Sub
     Public Sub New(nombre As String, paterno As String, materno As String, idTipoDocumento As String,
-                   documento As String, nacimiento As String, idEmpresa As String, idPais As String,
+                   documento As String, nacimiento As Date, idEmpresa As String, idPais As String,
                    idRegion As String, idProvincia As String, idDistrito As String, direccion As String)
 
         MyBase.New(nombre, paterno, materno, documento, nacimiento, idPais)
@@ -198,30 +198,28 @@ Public Class Proveedor
 
     Public Function InsertarProveedor(provee As Proveedor)
         Try
-            cmd = New SqlCommand("sp_proveedor_listar 
-                                @direccion, 
-                                @idDistrito, 
-                                @documento,
-                                @idTipoDocumento, 
-                                @nombre, 
-                                @apellidoP, 
-                                @apellidoM,                            
-                                @nacimiento, 
-                                @idPais, 
-                                @idEmpresa")
-            cmd.CommandType = CommandType.Text
-            With cmd.Parameters
-                .AddWithValue("@direccion", provee.Direccion)
-                .AddWithValue("@idDistrito", provee.Direccion)
-                .AddWithValue("@documento", provee.Direccion)
-                .AddWithValue("@idTipoDocumento", provee.Direccion)
-                .AddWithValue("@nombre", provee.Direccion)
-                .AddWithValue("@apellidoP", provee.Direccion)
-                .AddWithValue("@apellidoM", provee.Direccion)
-                .AddWithValue("@nacimiento", provee.Direccion)
-                .AddWithValue("@idPais", provee.Direccion)
-                .AddWithValue("@idEmpresa", provee.Direccion)
-            End With
+
+            'cmd.CommandType = CommandType.StoredProcedure
+            conectar()
+
+            cmd = New SqlCommand("sp_proveedor_agregar")
+
+            cmd.Connection = con
+            cmd.CommandType = CommandType.StoredProcedure
+            MsgBox(provee.ToString())
+            cmd.Parameters.AddWithValue("@in_v_direccion_ubicacion", SqlDbType.VarChar).Value = provee.Direccion
+            cmd.Parameters.AddWithValue("@in_i_id_distrito", SqlDbType.VarChar).Value = provee.Distrito
+            cmd.Parameters.AddWithValue("@in_v_valor_documento", SqlDbType.VarChar).Value = provee.Documento
+            cmd.Parameters.AddWithValue("@in_i_id_tipo_documento", SqlDbType.VarChar).Value = provee.Tipo
+            cmd.Parameters.AddWithValue("@in_v_nombre_persona", SqlDbType.VarChar).Value = provee.Nombre
+
+            cmd.Parameters.AddWithValue("@in_v_apellido_paterno_persona", SqlDbType.VarChar).Value = provee.ApellidoPaterno
+            cmd.Parameters.AddWithValue("@in_v_apellido_materno_persona", SqlDbType.VarChar).Value = provee.ApellidoMaterno
+
+            cmd.Parameters.AddWithValue("@in_d_fecha_nacimiento_persona", SqlDbType.Date).Value = provee.FechaNacimiento
+            cmd.Parameters.AddWithValue("@in_i_id_pais_origen", SqlDbType.VarChar).Value = provee.Pais
+            cmd.Parameters.AddWithValue("@in_i_id_empresa", SqlDbType.Char).Value = provee.Empresa
+
             If cmd.ExecuteNonQuery() Then
                 Return True
             Else
@@ -234,4 +232,5 @@ Public Class Proveedor
             con.Close()
         End Try
     End Function
+
 End Class
