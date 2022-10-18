@@ -74,4 +74,10 @@
             MsgBox(ex.Message & " FORM PRODUCTOS")
         End Try
     End Sub
+
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        FormInsertarProducto.Show()
+        FormEditarProducto.Show()
+        FormEliminarProducto.Show()
+    End Sub
 End Class

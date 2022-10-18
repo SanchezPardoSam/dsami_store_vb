@@ -32,12 +32,8 @@ Partial Class FormInsertarUsuarios
         Me.cbxRolAgregarUsuario = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtPasswordAgregarUsuario = New System.Windows.Forms.TextBox()
+        Me.txtClaveAgregarUsuario = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtEmailAgregarUsuarios = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtUsuarioAgregarUsuarios = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.txtNombreAgregarUsuario = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
@@ -71,7 +67,7 @@ Partial Class FormInsertarUsuarios
         Me.Panel3.Controls.Add(Me.btnCancelarAgregarUsuario)
         Me.Panel3.Controls.Add(Me.btnAceptarAgregarUsuario)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(0, 415)
+        Me.Panel3.Location = New System.Drawing.Point(0, 284)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(385, 55)
         Me.Panel3.TabIndex = 3
@@ -114,24 +110,20 @@ Partial Class FormInsertarUsuarios
         Me.Panel2.Controls.Add(Me.cbxRolAgregarUsuario)
         Me.Panel2.Controls.Add(Me.Label7)
         Me.Panel2.Controls.Add(Me.Label6)
-        Me.Panel2.Controls.Add(Me.txtPasswordAgregarUsuario)
+        Me.Panel2.Controls.Add(Me.txtClaveAgregarUsuario)
         Me.Panel2.Controls.Add(Me.Label5)
-        Me.Panel2.Controls.Add(Me.txtEmailAgregarUsuarios)
-        Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Controls.Add(Me.txtUsuarioAgregarUsuarios)
-        Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.txtNombreAgregarUsuario)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 58)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(385, 357)
+        Me.Panel2.Size = New System.Drawing.Size(385, 226)
         Me.Panel2.TabIndex = 4
         '
         'cbxEmpleadoAgregarUsuarios
         '
         Me.cbxEmpleadoAgregarUsuarios.FormattingEnabled = True
-        Me.cbxEmpleadoAgregarUsuarios.Location = New System.Drawing.Point(15, 307)
+        Me.cbxEmpleadoAgregarUsuarios.Location = New System.Drawing.Point(15, 191)
         Me.cbxEmpleadoAgregarUsuarios.Name = "cbxEmpleadoAgregarUsuarios"
         Me.cbxEmpleadoAgregarUsuarios.Size = New System.Drawing.Size(341, 21)
         Me.cbxEmpleadoAgregarUsuarios.TabIndex = 18
@@ -139,7 +131,7 @@ Partial Class FormInsertarUsuarios
         'cbxRolAgregarUsuario
         '
         Me.cbxRolAgregarUsuario.FormattingEnabled = True
-        Me.cbxRolAgregarUsuario.Location = New System.Drawing.Point(15, 252)
+        Me.cbxRolAgregarUsuario.Location = New System.Drawing.Point(15, 136)
         Me.cbxRolAgregarUsuario.Name = "cbxRolAgregarUsuario"
         Me.cbxRolAgregarUsuario.Size = New System.Drawing.Size(341, 21)
         Me.cbxRolAgregarUsuario.TabIndex = 17
@@ -148,7 +140,7 @@ Partial Class FormInsertarUsuarios
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(12, 287)
+        Me.Label7.Location = New System.Drawing.Point(12, 171)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(70, 16)
         Me.Label7.TabIndex = 16
@@ -158,62 +150,28 @@ Partial Class FormInsertarUsuarios
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(12, 233)
+        Me.Label6.Location = New System.Drawing.Point(12, 117)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(28, 16)
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Rol"
         '
-        'txtPasswordAgregarUsuario
+        'txtClaveAgregarUsuario
         '
-        Me.txtPasswordAgregarUsuario.Location = New System.Drawing.Point(15, 199)
-        Me.txtPasswordAgregarUsuario.Name = "txtPasswordAgregarUsuario"
-        Me.txtPasswordAgregarUsuario.Size = New System.Drawing.Size(341, 20)
-        Me.txtPasswordAgregarUsuario.TabIndex = 13
+        Me.txtClaveAgregarUsuario.Location = New System.Drawing.Point(15, 83)
+        Me.txtClaveAgregarUsuario.Name = "txtClaveAgregarUsuario"
+        Me.txtClaveAgregarUsuario.Size = New System.Drawing.Size(341, 20)
+        Me.txtClaveAgregarUsuario.TabIndex = 13
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(12, 178)
+        Me.Label5.Location = New System.Drawing.Point(12, 62)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(76, 16)
+        Me.Label5.Size = New System.Drawing.Size(42, 16)
         Me.Label5.TabIndex = 12
-        Me.Label5.Text = "Contraseña"
-        '
-        'txtEmailAgregarUsuarios
-        '
-        Me.txtEmailAgregarUsuarios.Location = New System.Drawing.Point(15, 142)
-        Me.txtEmailAgregarUsuarios.Name = "txtEmailAgregarUsuarios"
-        Me.txtEmailAgregarUsuarios.Size = New System.Drawing.Size(341, 20)
-        Me.txtEmailAgregarUsuarios.TabIndex = 11
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(12, 121)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(41, 16)
-        Me.Label4.TabIndex = 10
-        Me.Label4.Text = "Email"
-        '
-        'txtUsuarioAgregarUsuarios
-        '
-        Me.txtUsuarioAgregarUsuarios.Location = New System.Drawing.Point(15, 86)
-        Me.txtUsuarioAgregarUsuarios.Name = "txtUsuarioAgregarUsuarios"
-        Me.txtUsuarioAgregarUsuarios.Size = New System.Drawing.Size(341, 20)
-        Me.txtUsuarioAgregarUsuarios.TabIndex = 9
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(12, 65)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(54, 16)
-        Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Usuario"
+        Me.Label5.Text = "Clave"
         '
         'txtNombreAgregarUsuario
         '
@@ -228,15 +186,15 @@ Partial Class FormInsertarUsuarios
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(12, 9)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(56, 16)
+        Me.Label2.Size = New System.Drawing.Size(125, 16)
         Me.Label2.TabIndex = 6
-        Me.Label2.Text = "Nombre"
+        Me.Label2.Text = "Nombre de Usuario"
         '
         'FormInsertarUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(385, 470)
+        Me.ClientSize = New System.Drawing.Size(385, 339)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
@@ -261,12 +219,8 @@ Partial Class FormInsertarUsuarios
     Friend WithEvents cbxRolAgregarUsuario As ComboBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents txtPasswordAgregarUsuario As TextBox
+    Friend WithEvents txtClaveAgregarUsuario As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents txtEmailAgregarUsuarios As TextBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents txtUsuarioAgregarUsuarios As TextBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents txtNombreAgregarUsuario As TextBox
     Friend WithEvents Label2 As Label
 End Class
