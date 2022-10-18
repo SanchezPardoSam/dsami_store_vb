@@ -17,7 +17,7 @@
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptarEliminarRol.Click
         Try
             Dim codigo As String = padre.dgvRoles.CurrentRow.Cells.Item(0).Value
-
+            MsgBox(codigo)
             _rolNegocio.EliminarRol(codigo)
 
             padre.Cargardatos()
@@ -31,5 +31,9 @@
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelarEliminarRol.Click
         Me.Close()
+    End Sub
+
+    Private Sub FormEliminarRol_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
