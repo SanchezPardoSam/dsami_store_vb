@@ -184,6 +184,12 @@
     <Compile Include="Presentation\form\FormEditarProducto.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentation\form\FormEditarProveedor.Designer.vb">
+      <DependentUpon>FormEditarProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\form\FormEditarProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentation\form\FormEditarRol.Designer.vb">
       <DependentUpon>FormEditarRol.vb</DependentUpon>
     </Compile>
@@ -206,6 +212,12 @@
       <DependentUpon>FormEliminarProducto.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentation\form\FormEliminarProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\form\FormEliminarProveedores.Designer.vb">
+      <DependentUpon>FormEliminarProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\form\FormEliminarProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation\form\FormEliminarRol.Designer.vb">
@@ -291,6 +303,9 @@
     <EmbeddedResource Include="Presentation\form\FormEditarProducto.resx">
       <DependentUpon>FormEditarProducto.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\form\FormEditarProveedor.resx">
+      <DependentUpon>FormEditarProveedor.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\form\FormEditarRol.resx">
       <DependentUpon>FormEditarRol.vb</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\form\FormEliminarProducto.resx">
       <DependentUpon>FormEliminarProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\form\FormEliminarProveedores.resx">
+      <DependentUpon>FormEliminarProveedores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\form\FormEliminarRol.resx">
       <DependentUpon>FormEliminarRol.vb</DependentUpon>
