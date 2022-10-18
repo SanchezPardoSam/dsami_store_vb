@@ -23,6 +23,8 @@ Partial Class FormEmpleados
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnEditar = New System.Windows.Forms.Button()
         Me.tbBuscar = New System.Windows.Forms.TextBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
@@ -40,8 +42,7 @@ Partial Class FormEmpleados
         Me.apellidoP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.editar = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.eliminar = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Direccion4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,6 +50,9 @@ Partial Class FormEmpleados
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.btnEliminar)
+        Me.Panel1.Controls.Add(Me.btnEditar)
         Me.Panel1.Controls.Add(Me.tbBuscar)
         Me.Panel1.Controls.Add(Me.btnBuscar)
         Me.Panel1.Controls.Add(Me.btnAgregar)
@@ -59,6 +63,34 @@ Partial Class FormEmpleados
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(812, 106)
         Me.Panel1.TabIndex = 3
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.BackColor = System.Drawing.Color.Gray
+        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.ForeColor = System.Drawing.Color.White
+        Me.btnEliminar.Location = New System.Drawing.Point(443, 61)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(87, 30)
+        Me.btnEliminar.TabIndex = 10
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = False
+        '
+        'btnEditar
+        '
+        Me.btnEditar.BackColor = System.Drawing.Color.Gray
+        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditar.ForeColor = System.Drawing.Color.White
+        Me.btnEditar.Location = New System.Drawing.Point(340, 61)
+        Me.btnEditar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(87, 30)
+        Me.btnEditar.TabIndex = 9
+        Me.btnEditar.Text = "Editar"
+        Me.btnEditar.UseVisualStyleBackColor = False
         '
         'tbBuscar
         '
@@ -71,8 +103,8 @@ Partial Class FormEmpleados
         'btnBuscar
         '
         Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscar.ForeColor = System.Drawing.Color.White
         Me.btnBuscar.Location = New System.Drawing.Point(716, 61)
         Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2)
@@ -85,8 +117,8 @@ Partial Class FormEmpleados
         'btnAgregar
         '
         Me.btnAgregar.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.ForeColor = System.Drawing.Color.White
         Me.btnAgregar.Location = New System.Drawing.Point(14, 61)
         Me.btnAgregar.Margin = New System.Windows.Forms.Padding(2)
@@ -99,17 +131,18 @@ Partial Class FormEmpleados
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Bookman Old Style", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Black", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Label1.Location = New System.Drawing.Point(9, 15)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(166, 32)
+        Me.Label1.Size = New System.Drawing.Size(124, 30)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Empleados"
         '
         'Panel2
         '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Panel2.Controls.Add(Me.btnSiguiente)
         Me.Panel2.Controls.Add(Me.btnAnterior)
         Me.Panel2.Controls.Add(Me.Label3)
@@ -169,8 +202,9 @@ Partial Class FormEmpleados
         '
         'dgvEmpleados
         '
+        Me.dgvEmpleados.BackgroundColor = System.Drawing.Color.White
         Me.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEmpleados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre, Me.apellidoM, Me.apellidoP, Me.telefono, Me.direccion, Me.editar, Me.eliminar})
+        Me.dgvEmpleados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre, Me.apellidoM, Me.apellidoP, Me.telefono, Me.direccion, Me.Direccion4})
         Me.dgvEmpleados.Location = New System.Drawing.Point(14, 19)
         Me.dgvEmpleados.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvEmpleados.Name = "dgvEmpleados"
@@ -195,45 +229,36 @@ Partial Class FormEmpleados
         '
         'apellidoM
         '
-        Me.apellidoM.HeaderText = "apellido M"
+        Me.apellidoM.HeaderText = "Apellido Paterno"
         Me.apellidoM.MinimumWidth = 6
         Me.apellidoM.Name = "apellidoM"
         Me.apellidoM.Width = 125
         '
         'apellidoP
         '
-        Me.apellidoP.HeaderText = "Apellido P"
+        Me.apellidoP.HeaderText = "Apellido Materno"
         Me.apellidoP.MinimumWidth = 6
         Me.apellidoP.Name = "apellidoP"
         Me.apellidoP.Width = 125
         '
         'telefono
         '
-        Me.telefono.HeaderText = "Telefono"
+        Me.telefono.HeaderText = "Tipo Documento"
         Me.telefono.MinimumWidth = 6
         Me.telefono.Name = "telefono"
         Me.telefono.Width = 125
         '
         'direccion
         '
-        Me.direccion.HeaderText = "Direccion"
+        Me.direccion.HeaderText = "N Documento"
         Me.direccion.MinimumWidth = 6
         Me.direccion.Name = "direccion"
         Me.direccion.Width = 125
         '
-        'editar
+        'Direccion4
         '
-        Me.editar.HeaderText = "Editar"
-        Me.editar.MinimumWidth = 6
-        Me.editar.Name = "editar"
-        Me.editar.Width = 125
-        '
-        'eliminar
-        '
-        Me.eliminar.HeaderText = "Eliminar"
-        Me.eliminar.MinimumWidth = 6
-        Me.eliminar.Name = "eliminar"
-        Me.eliminar.Width = 125
+        Me.Direccion4.HeaderText = "Direccion"
+        Me.Direccion4.Name = "Direccion4"
         '
         'FormEmpleados
         '
@@ -261,17 +286,18 @@ Partial Class FormEmpleados
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents dgvEmpleados As DataGridView
+    Friend WithEvents btnSiguiente As Button
+    Friend WithEvents btnAnterior As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents cbLimite As ComboBox
+    Friend WithEvents tbPagina As TextBox
+    Friend WithEvents btnEliminar As Button
+    Friend WithEvents btnEditar As Button
     Friend WithEvents codigo As DataGridViewTextBoxColumn
     Friend WithEvents nombre As DataGridViewTextBoxColumn
     Friend WithEvents apellidoM As DataGridViewTextBoxColumn
     Friend WithEvents apellidoP As DataGridViewTextBoxColumn
     Friend WithEvents telefono As DataGridViewTextBoxColumn
     Friend WithEvents direccion As DataGridViewTextBoxColumn
-    Friend WithEvents editar As DataGridViewTextBoxColumn
-    Friend WithEvents eliminar As DataGridViewTextBoxColumn
-    Friend WithEvents btnSiguiente As Button
-    Friend WithEvents btnAnterior As Button
-    Friend WithEvents Label3 As Label
-    Friend WithEvents cbLimite As ComboBox
-    Friend WithEvents tbPagina As TextBox
+    Friend WithEvents Direccion4 As DataGridViewTextBoxColumn
 End Class

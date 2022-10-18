@@ -49,6 +49,8 @@
 
             tbPagina.Text = _pagina
 
+            _totalPagina = _empleadoNegocio.ObtenerEmpleadosCantidad(_consulta, _limite)
+
             If _pagina = 1 Then
                 btnAnterior.Enabled = False
             Else
@@ -61,15 +63,13 @@
                 btnSiguiente.Enabled = True
             End If
 
-            _totalPagina = _empleadoNegocio.ObtenerEmpleadosCantidad(_consulta, _limite)
-
             Dim empleados As List(Of Empleado) = _empleadoNegocio.ObtenerEmpleados(_consulta, _pagina, _limite)
 
             Dim i As Integer = 1
 
             For x = 0 To empleados.Count - 1 Step 1
                 dgvEmpleados.Rows.Add((x + 1).ToString(), empleados(x).Nombre,
-                                        empleados(x).ApellidoPaterno, empleados(x).ApellidoMaterno)
+                                        empleados(x).ApellidoPaterno, empleados(x).ApellidoMaterno, empleados(x).Tipo_Documento, empleados(x).Numero_Documento, empleados(x).Direccion_Empleado)
             Next
 
 
@@ -107,5 +107,13 @@
         FormEliminarEmpleado.Show()
         FormInsertarEmpleado.Show()
         FormEditarEmpleado.Show()
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
     End Sub
 End Class

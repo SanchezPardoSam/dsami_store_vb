@@ -37,14 +37,11 @@ Partial Class FormProductos
         Me.tbPagina = New System.Windows.Forms.TextBox()
         Me.dgvProductos = New System.Windows.Forms.DataGridView()
         Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.almacen = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.editar = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.eliminar = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.almacen = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,6 +49,7 @@ Partial Class FormProductos
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Panel1.Controls.Add(Me.ButtonEdit)
         Me.Panel1.Controls.Add(Me.ButtonDelete)
         Me.Panel1.Controls.Add(Me.tbBuscar)
@@ -69,7 +67,7 @@ Partial Class FormProductos
         '
         Me.ButtonEdit.BackColor = System.Drawing.Color.Gray
         Me.ButtonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonEdit.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonEdit.ForeColor = System.Drawing.Color.White
         Me.ButtonEdit.Location = New System.Drawing.Point(332, 61)
         Me.ButtonEdit.Name = "ButtonEdit"
@@ -81,7 +79,8 @@ Partial Class FormProductos
         'ButtonDelete
         '
         Me.ButtonDelete.BackColor = System.Drawing.Color.Gray
-        Me.ButtonDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonDelete.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonDelete.ForeColor = System.Drawing.Color.White
         Me.ButtonDelete.Location = New System.Drawing.Point(440, 61)
         Me.ButtonDelete.Name = "ButtonDelete"
@@ -101,8 +100,8 @@ Partial Class FormProductos
         'btnBuscar
         '
         Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscar.ForeColor = System.Drawing.Color.White
         Me.btnBuscar.Location = New System.Drawing.Point(716, 61)
         Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2)
@@ -116,8 +115,8 @@ Partial Class FormProductos
         '
         Me.btnAgregar.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(94, Byte), Integer))
         Me.btnAgregar.FlatAppearance.BorderSize = 0
-        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.ForeColor = System.Drawing.Color.White
         Me.btnAgregar.Location = New System.Drawing.Point(14, 61)
         Me.btnAgregar.Margin = New System.Windows.Forms.Padding(2)
@@ -130,17 +129,18 @@ Partial Class FormProductos
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Bookman Old Style", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Black", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Label1.Location = New System.Drawing.Point(9, 15)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(155, 32)
+        Me.Label1.Size = New System.Drawing.Size(117, 30)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Productos"
         '
         'Panel2
         '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Panel2.Controls.Add(Me.btnSiguiente)
         Me.Panel2.Controls.Add(Me.btnAnterior)
         Me.Panel2.Controls.Add(Me.Label3)
@@ -200,8 +200,9 @@ Partial Class FormProductos
         '
         'dgvProductos
         '
+        Me.dgvProductos.BackgroundColor = System.Drawing.Color.White
         Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.categoria, Me.almacen, Me.nombre, Me.descripcion, Me.precio, Me.estado, Me.editar, Me.eliminar})
+        Me.dgvProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre, Me.descripcion, Me.precio, Me.almacen, Me.categoria})
         Me.dgvProductos.Location = New System.Drawing.Point(14, 19)
         Me.dgvProductos.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvProductos.Name = "dgvProductos"
@@ -216,20 +217,6 @@ Partial Class FormProductos
         Me.codigo.MinimumWidth = 6
         Me.codigo.Name = "codigo"
         Me.codigo.Width = 125
-        '
-        'categoria
-        '
-        Me.categoria.HeaderText = "Categoria"
-        Me.categoria.MinimumWidth = 6
-        Me.categoria.Name = "categoria"
-        Me.categoria.Width = 125
-        '
-        'almacen
-        '
-        Me.almacen.HeaderText = "Almacan"
-        Me.almacen.MinimumWidth = 6
-        Me.almacen.Name = "almacen"
-        Me.almacen.Width = 125
         '
         'nombre
         '
@@ -252,26 +239,19 @@ Partial Class FormProductos
         Me.precio.Name = "precio"
         Me.precio.Width = 125
         '
-        'estado
+        'almacen
         '
-        Me.estado.HeaderText = "Estado"
-        Me.estado.MinimumWidth = 6
-        Me.estado.Name = "estado"
-        Me.estado.Width = 125
+        Me.almacen.HeaderText = "Marca"
+        Me.almacen.MinimumWidth = 6
+        Me.almacen.Name = "almacen"
+        Me.almacen.Width = 125
         '
-        'editar
+        'categoria
         '
-        Me.editar.HeaderText = "Editar"
-        Me.editar.MinimumWidth = 6
-        Me.editar.Name = "editar"
-        Me.editar.Width = 125
-        '
-        'eliminar
-        '
-        Me.eliminar.HeaderText = "Eliminar"
-        Me.eliminar.MinimumWidth = 6
-        Me.eliminar.Name = "eliminar"
-        Me.eliminar.Width = 125
+        Me.categoria.HeaderText = "Categoria"
+        Me.categoria.MinimumWidth = 6
+        Me.categoria.Name = "categoria"
+        Me.categoria.Width = 125
         '
         'FormProductos
         '
@@ -299,15 +279,6 @@ Partial Class FormProductos
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents dgvProductos As DataGridView
-    Friend WithEvents codigo As DataGridViewTextBoxColumn
-    Friend WithEvents categoria As DataGridViewTextBoxColumn
-    Friend WithEvents almacen As DataGridViewTextBoxColumn
-    Friend WithEvents nombre As DataGridViewTextBoxColumn
-    Friend WithEvents descripcion As DataGridViewTextBoxColumn
-    Friend WithEvents precio As DataGridViewTextBoxColumn
-    Friend WithEvents estado As DataGridViewTextBoxColumn
-    Friend WithEvents editar As DataGridViewTextBoxColumn
-    Friend WithEvents eliminar As DataGridViewTextBoxColumn
     Friend WithEvents btnSiguiente As Button
     Friend WithEvents btnAnterior As Button
     Friend WithEvents Label3 As Label
@@ -315,4 +286,10 @@ Partial Class FormProductos
     Friend WithEvents tbPagina As TextBox
     Friend WithEvents ButtonEdit As Button
     Friend WithEvents ButtonDelete As Button
+    Friend WithEvents codigo As DataGridViewTextBoxColumn
+    Friend WithEvents nombre As DataGridViewTextBoxColumn
+    Friend WithEvents descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents precio As DataGridViewTextBoxColumn
+    Friend WithEvents almacen As DataGridViewTextBoxColumn
+    Friend WithEvents categoria As DataGridViewTextBoxColumn
 End Class

@@ -62,7 +62,7 @@ Partial Class Principal
         Me.IconButton6.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.IconButton6.IconSize = 36
         Me.IconButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton6.Location = New System.Drawing.Point(2, 391)
+        Me.IconButton6.Location = New System.Drawing.Point(2, 378)
         Me.IconButton6.Margin = New System.Windows.Forms.Padding(2)
         Me.IconButton6.Name = "IconButton6"
         Me.IconButton6.Size = New System.Drawing.Size(205, 54)
@@ -81,7 +81,7 @@ Partial Class Principal
         Me.IconButton5.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.IconButton5.IconSize = 36
         Me.IconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton5.Location = New System.Drawing.Point(2, 332)
+        Me.IconButton5.Location = New System.Drawing.Point(2, 88)
         Me.IconButton5.Margin = New System.Windows.Forms.Padding(2)
         Me.IconButton5.Name = "IconButton5"
         Me.IconButton5.Size = New System.Drawing.Size(205, 54)
@@ -100,7 +100,7 @@ Partial Class Principal
         Me.IconButton4.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.IconButton4.IconSize = 36
         Me.IconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton4.Location = New System.Drawing.Point(2, 274)
+        Me.IconButton4.Location = New System.Drawing.Point(2, 146)
         Me.IconButton4.Margin = New System.Windows.Forms.Padding(2)
         Me.IconButton4.Name = "IconButton4"
         Me.IconButton4.Size = New System.Drawing.Size(205, 54)
@@ -119,7 +119,7 @@ Partial Class Principal
         Me.IconButton3.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.IconButton3.IconSize = 36
         Me.IconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton3.Location = New System.Drawing.Point(2, 157)
+        Me.IconButton3.Location = New System.Drawing.Point(2, 320)
         Me.IconButton3.Margin = New System.Windows.Forms.Padding(2)
         Me.IconButton3.Name = "IconButton3"
         Me.IconButton3.Size = New System.Drawing.Size(205, 54)
@@ -138,7 +138,7 @@ Partial Class Principal
         Me.IconButton2.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.IconButton2.IconSize = 36
         Me.IconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton2.Location = New System.Drawing.Point(2, 215)
+        Me.IconButton2.Location = New System.Drawing.Point(2, 204)
         Me.IconButton2.Margin = New System.Windows.Forms.Padding(2)
         Me.IconButton2.Name = "IconButton2"
         Me.IconButton2.Size = New System.Drawing.Size(205, 54)
@@ -157,7 +157,7 @@ Partial Class Principal
         Me.IconButton1.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.IconButton1.IconSize = 36
         Me.IconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButton1.Location = New System.Drawing.Point(2, 98)
+        Me.IconButton1.Location = New System.Drawing.Point(2, 262)
         Me.IconButton1.Margin = New System.Windows.Forms.Padding(2)
         Me.IconButton1.Name = "IconButton1"
         Me.IconButton1.Size = New System.Drawing.Size(205, 54)
