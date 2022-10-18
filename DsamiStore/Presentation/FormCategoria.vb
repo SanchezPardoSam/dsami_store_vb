@@ -99,5 +99,9 @@
         Cargardatos()
     End Sub
 
-
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        FormInsertarCategorias.Show()
+        FormEditarCategoria.Show()
+        FormEliminarCategorias.Show()
+    End Sub
 End Class
