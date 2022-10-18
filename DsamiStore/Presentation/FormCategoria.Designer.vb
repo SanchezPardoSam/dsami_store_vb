@@ -39,8 +39,6 @@ Partial Class FormCategoria
         Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Editar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvCategorias, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -200,8 +198,9 @@ Partial Class FormCategoria
         '
         'dgvCategorias
         '
+        Me.dgvCategorias.BackgroundColor = System.Drawing.Color.White
         Me.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCategorias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.Nombre, Me.Descripcion, Me.Editar, Me.Eliminar})
+        Me.dgvCategorias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.Nombre, Me.Descripcion})
         Me.dgvCategorias.Location = New System.Drawing.Point(14, 19)
         Me.dgvCategorias.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvCategorias.Name = "dgvCategorias"
@@ -231,20 +230,6 @@ Partial Class FormCategoria
         Me.Descripcion.Name = "Descripcion"
         Me.Descripcion.Width = 250
         '
-        'Editar
-        '
-        Me.Editar.HeaderText = "Editar"
-        Me.Editar.MinimumWidth = 6
-        Me.Editar.Name = "Editar"
-        Me.Editar.Width = 125
-        '
-        'Eliminar
-        '
-        Me.Eliminar.HeaderText = "Eliminar"
-        Me.Eliminar.MinimumWidth = 6
-        Me.Eliminar.Name = "Eliminar"
-        Me.Eliminar.Width = 125
-        '
         'FormCategoria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -271,11 +256,6 @@ Partial Class FormCategoria
     Friend WithEvents btnAgregar As Button
     Friend WithEvents Panel2 As Panel
     Friend WithEvents dgvCategorias As DataGridView
-    Friend WithEvents Codigo As DataGridViewTextBoxColumn
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
-    Friend WithEvents Editar As DataGridViewButtonColumn
-    Friend WithEvents Eliminar As DataGridViewButtonColumn
     Friend WithEvents btnSiguiente As Button
     Friend WithEvents btnAnterior As Button
     Friend WithEvents Label3 As Label
@@ -283,4 +263,7 @@ Partial Class FormCategoria
     Friend WithEvents tbPagina As TextBox
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnEditar As Button
+    Friend WithEvents Codigo As DataGridViewTextBoxColumn
+    Friend WithEvents Nombre As DataGridViewTextBoxColumn
+    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
 End Class

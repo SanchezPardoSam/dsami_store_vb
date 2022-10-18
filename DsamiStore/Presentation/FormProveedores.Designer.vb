@@ -30,19 +30,17 @@ Partial Class FormProveedores
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.dgvProveedores = New System.Windows.Forms.DataGridView()
+        Me.btnAnterior = New System.Windows.Forms.Button()
+        Me.cbLimite = New System.Windows.Forms.ComboBox()
+        Me.tbPagina = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Documento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Empresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.editar = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.eliminar = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnSiguiente = New System.Windows.Forms.Button()
-        Me.btnAnterior = New System.Windows.Forms.Button()
-        Me.cbLimite = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.tbPagina = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -50,6 +48,7 @@ Partial Class FormProveedores
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnEliminar)
         Me.Panel1.Controls.Add(Me.btnEditar)
         Me.Panel1.Controls.Add(Me.tbBuscar)
@@ -58,7 +57,7 @@ Partial Class FormProveedores
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(812, 106)
         Me.Panel1.TabIndex = 3
@@ -66,11 +65,11 @@ Partial Class FormProveedores
         'btnEliminar
         '
         Me.btnEliminar.BackColor = System.Drawing.Color.Gray
-        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar.ForeColor = System.Drawing.Color.White
         Me.btnEliminar.Location = New System.Drawing.Point(440, 61)
-        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(87, 30)
         Me.btnEliminar.TabIndex = 8
@@ -80,11 +79,11 @@ Partial Class FormProveedores
         'btnEditar
         '
         Me.btnEditar.BackColor = System.Drawing.Color.Gray
-        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEditar.ForeColor = System.Drawing.Color.White
         Me.btnEditar.Location = New System.Drawing.Point(338, 61)
-        Me.btnEditar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnEditar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(87, 30)
         Me.btnEditar.TabIndex = 7
@@ -94,7 +93,7 @@ Partial Class FormProveedores
         'tbBuscar
         '
         Me.tbBuscar.Location = New System.Drawing.Point(544, 67)
-        Me.tbBuscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tbBuscar.Margin = New System.Windows.Forms.Padding(2)
         Me.tbBuscar.Name = "tbBuscar"
         Me.tbBuscar.Size = New System.Drawing.Size(168, 20)
         Me.tbBuscar.TabIndex = 4
@@ -102,11 +101,11 @@ Partial Class FormProveedores
         'btnBuscar
         '
         Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscar.ForeColor = System.Drawing.Color.White
         Me.btnBuscar.Location = New System.Drawing.Point(716, 61)
-        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(87, 30)
         Me.btnBuscar.TabIndex = 3
@@ -116,11 +115,11 @@ Partial Class FormProveedores
         'btnAgregar
         '
         Me.btnAgregar.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.ForeColor = System.Drawing.Color.White
         Me.btnAgregar.Location = New System.Drawing.Point(14, 61)
-        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(87, 30)
         Me.btnAgregar.TabIndex = 2
@@ -130,17 +129,18 @@ Partial Class FormProveedores
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Bookman Old Style", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Black", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Label1.Location = New System.Drawing.Point(9, 15)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(185, 32)
+        Me.Label1.Size = New System.Drawing.Size(142, 30)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Proveedores"
         '
         'Panel2
         '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Panel2.Controls.Add(Me.btnSiguiente)
         Me.Panel2.Controls.Add(Me.dgvProveedores)
         Me.Panel2.Controls.Add(Me.btnAnterior)
@@ -149,22 +149,67 @@ Partial Class FormProveedores
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 106)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(812, 302)
         Me.Panel2.TabIndex = 5
         '
+        'btnSiguiente
+        '
+        Me.btnSiguiente.Location = New System.Drawing.Point(81, 266)
+        Me.btnSiguiente.Name = "btnSiguiente"
+        Me.btnSiguiente.Size = New System.Drawing.Size(21, 23)
+        Me.btnSiguiente.TabIndex = 27
+        Me.btnSiguiente.Text = ">"
+        Me.btnSiguiente.UseVisualStyleBackColor = True
+        '
         'dgvProveedores
         '
+        Me.dgvProveedores.BackgroundColor = System.Drawing.Color.White
         Me.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProveedores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre, Me.Documento, Me.Empresa, Me.Direccion, Me.editar, Me.eliminar})
+        Me.dgvProveedores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre, Me.Documento, Me.Empresa, Me.Direccion})
         Me.dgvProveedores.Location = New System.Drawing.Point(14, 19)
-        Me.dgvProveedores.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgvProveedores.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvProveedores.Name = "dgvProveedores"
         Me.dgvProveedores.RowHeadersWidth = 51
         Me.dgvProveedores.RowTemplate.Height = 24
         Me.dgvProveedores.Size = New System.Drawing.Size(788, 232)
         Me.dgvProveedores.TabIndex = 0
+        '
+        'btnAnterior
+        '
+        Me.btnAnterior.Location = New System.Drawing.Point(16, 267)
+        Me.btnAnterior.Name = "btnAnterior"
+        Me.btnAnterior.Size = New System.Drawing.Size(21, 23)
+        Me.btnAnterior.TabIndex = 26
+        Me.btnAnterior.Text = "<"
+        Me.btnAnterior.UseVisualStyleBackColor = True
+        '
+        'cbLimite
+        '
+        Me.cbLimite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbLimite.FormattingEnabled = True
+        Me.cbLimite.Location = New System.Drawing.Point(669, 269)
+        Me.cbLimite.Name = "cbLimite"
+        Me.cbLimite.Size = New System.Drawing.Size(121, 21)
+        Me.cbLimite.TabIndex = 24
+        '
+        'tbPagina
+        '
+        Me.tbPagina.Enabled = False
+        Me.tbPagina.Location = New System.Drawing.Point(43, 269)
+        Me.tbPagina.Name = "tbPagina"
+        Me.tbPagina.Size = New System.Drawing.Size(30, 20)
+        Me.tbPagina.TabIndex = 23
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(614, 272)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(36, 13)
+        Me.Label3.TabIndex = 25
+        Me.Label3.Text = "Límite"
         '
         'codigo
         '
@@ -201,64 +246,6 @@ Partial Class FormProveedores
         Me.Direccion.Name = "Direccion"
         Me.Direccion.Width = 125
         '
-        'editar
-        '
-        Me.editar.HeaderText = "Editar"
-        Me.editar.MinimumWidth = 6
-        Me.editar.Name = "editar"
-        Me.editar.Width = 125
-        '
-        'eliminar
-        '
-        Me.eliminar.HeaderText = "Eliminar"
-        Me.eliminar.MinimumWidth = 6
-        Me.eliminar.Name = "eliminar"
-        Me.eliminar.Width = 125
-        '
-        'btnSiguiente
-        '
-        Me.btnSiguiente.Location = New System.Drawing.Point(81, 266)
-        Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(21, 23)
-        Me.btnSiguiente.TabIndex = 27
-        Me.btnSiguiente.Text = ">"
-        Me.btnSiguiente.UseVisualStyleBackColor = True
-        '
-        'btnAnterior
-        '
-        Me.btnAnterior.Location = New System.Drawing.Point(16, 267)
-        Me.btnAnterior.Name = "btnAnterior"
-        Me.btnAnterior.Size = New System.Drawing.Size(21, 23)
-        Me.btnAnterior.TabIndex = 26
-        Me.btnAnterior.Text = "<"
-        Me.btnAnterior.UseVisualStyleBackColor = True
-        '
-        'cbLimite
-        '
-        Me.cbLimite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbLimite.FormattingEnabled = True
-        Me.cbLimite.Location = New System.Drawing.Point(669, 269)
-        Me.cbLimite.Name = "cbLimite"
-        Me.cbLimite.Size = New System.Drawing.Size(121, 21)
-        Me.cbLimite.TabIndex = 24
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(614, 272)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(36, 13)
-        Me.Label3.TabIndex = 25
-        Me.Label3.Text = "Límite"
-        '
-        'tbPagina
-        '
-        Me.tbPagina.Enabled = False
-        Me.tbPagina.Location = New System.Drawing.Point(43, 269)
-        Me.tbPagina.Name = "tbPagina"
-        Me.tbPagina.Size = New System.Drawing.Size(30, 20)
-        Me.tbPagina.TabIndex = 23
-        '
         'FormProveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -266,7 +253,7 @@ Partial Class FormProveedores
         Me.ClientSize = New System.Drawing.Size(812, 408)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FormProveedores"
         Me.Text = "FormProveedores"
         Me.Panel1.ResumeLayout(False)
@@ -285,13 +272,6 @@ Partial Class FormProveedores
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents dgvProveedores As DataGridView
-    Friend WithEvents codigo As DataGridViewTextBoxColumn
-    Friend WithEvents nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Documento As DataGridViewTextBoxColumn
-    Friend WithEvents Empresa As DataGridViewTextBoxColumn
-    Friend WithEvents Direccion As DataGridViewTextBoxColumn
-    Friend WithEvents editar As DataGridViewTextBoxColumn
-    Friend WithEvents eliminar As DataGridViewTextBoxColumn
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnEditar As Button
     Friend WithEvents btnSiguiente As Button
@@ -299,4 +279,9 @@ Partial Class FormProveedores
     Friend WithEvents cbLimite As ComboBox
     Friend WithEvents tbPagina As TextBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents codigo As DataGridViewTextBoxColumn
+    Friend WithEvents nombre As DataGridViewTextBoxColumn
+    Friend WithEvents Documento As DataGridViewTextBoxColumn
+    Friend WithEvents Empresa As DataGridViewTextBoxColumn
+    Friend WithEvents Direccion As DataGridViewTextBoxColumn
 End Class
