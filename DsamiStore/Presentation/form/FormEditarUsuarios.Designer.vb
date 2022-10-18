@@ -32,12 +32,8 @@ Partial Class FormEditarUsuarios
         Me.cbxRolEditarUsuario = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtPasswordEditarUsuario = New System.Windows.Forms.TextBox()
+        Me.txtClaveEditarUsuario = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtEmailEditarUsuarios = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtUsuarioEditarUsuarios = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.txtNombreEditarUsuario = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
@@ -71,7 +67,7 @@ Partial Class FormEditarUsuarios
         Me.Panel3.Controls.Add(Me.btnCancelarEditarUsuario)
         Me.Panel3.Controls.Add(Me.btnAceptarEditarUsuario)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(0, 415)
+        Me.Panel3.Location = New System.Drawing.Point(0, 284)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(385, 55)
         Me.Panel3.TabIndex = 3
@@ -114,24 +110,20 @@ Partial Class FormEditarUsuarios
         Me.Panel2.Controls.Add(Me.cbxRolEditarUsuario)
         Me.Panel2.Controls.Add(Me.Label7)
         Me.Panel2.Controls.Add(Me.Label6)
-        Me.Panel2.Controls.Add(Me.txtPasswordEditarUsuario)
+        Me.Panel2.Controls.Add(Me.txtClaveEditarUsuario)
         Me.Panel2.Controls.Add(Me.Label5)
-        Me.Panel2.Controls.Add(Me.txtEmailEditarUsuarios)
-        Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Controls.Add(Me.txtUsuarioEditarUsuarios)
-        Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.txtNombreEditarUsuario)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 58)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(385, 357)
+        Me.Panel2.Size = New System.Drawing.Size(385, 226)
         Me.Panel2.TabIndex = 4
         '
         'cbxEmpleadoEditarUsuarios
         '
         Me.cbxEmpleadoEditarUsuarios.FormattingEnabled = True
-        Me.cbxEmpleadoEditarUsuarios.Location = New System.Drawing.Point(24, 306)
+        Me.cbxEmpleadoEditarUsuarios.Location = New System.Drawing.Point(22, 186)
         Me.cbxEmpleadoEditarUsuarios.Name = "cbxEmpleadoEditarUsuarios"
         Me.cbxEmpleadoEditarUsuarios.Size = New System.Drawing.Size(341, 21)
         Me.cbxEmpleadoEditarUsuarios.TabIndex = 30
@@ -139,7 +131,7 @@ Partial Class FormEditarUsuarios
         'cbxRolEditarUsuario
         '
         Me.cbxRolEditarUsuario.FormattingEnabled = True
-        Me.cbxRolEditarUsuario.Location = New System.Drawing.Point(24, 251)
+        Me.cbxRolEditarUsuario.Location = New System.Drawing.Point(22, 131)
         Me.cbxRolEditarUsuario.Name = "cbxRolEditarUsuario"
         Me.cbxRolEditarUsuario.Size = New System.Drawing.Size(341, 21)
         Me.cbxRolEditarUsuario.TabIndex = 29
@@ -148,7 +140,7 @@ Partial Class FormEditarUsuarios
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(21, 286)
+        Me.Label7.Location = New System.Drawing.Point(19, 166)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(70, 16)
         Me.Label7.TabIndex = 28
@@ -158,62 +150,28 @@ Partial Class FormEditarUsuarios
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(21, 232)
+        Me.Label6.Location = New System.Drawing.Point(19, 112)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(28, 16)
         Me.Label6.TabIndex = 27
         Me.Label6.Text = "Rol"
         '
-        'txtPasswordEditarUsuario
+        'txtClaveEditarUsuario
         '
-        Me.txtPasswordEditarUsuario.Location = New System.Drawing.Point(24, 198)
-        Me.txtPasswordEditarUsuario.Name = "txtPasswordEditarUsuario"
-        Me.txtPasswordEditarUsuario.Size = New System.Drawing.Size(341, 20)
-        Me.txtPasswordEditarUsuario.TabIndex = 26
+        Me.txtClaveEditarUsuario.Location = New System.Drawing.Point(22, 78)
+        Me.txtClaveEditarUsuario.Name = "txtClaveEditarUsuario"
+        Me.txtClaveEditarUsuario.Size = New System.Drawing.Size(341, 20)
+        Me.txtClaveEditarUsuario.TabIndex = 26
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(21, 177)
+        Me.Label5.Location = New System.Drawing.Point(19, 57)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(76, 16)
+        Me.Label5.Size = New System.Drawing.Size(42, 16)
         Me.Label5.TabIndex = 25
-        Me.Label5.Text = "Contraseña"
-        '
-        'txtEmailEditarUsuarios
-        '
-        Me.txtEmailEditarUsuarios.Location = New System.Drawing.Point(24, 141)
-        Me.txtEmailEditarUsuarios.Name = "txtEmailEditarUsuarios"
-        Me.txtEmailEditarUsuarios.Size = New System.Drawing.Size(341, 20)
-        Me.txtEmailEditarUsuarios.TabIndex = 24
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(21, 120)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(41, 16)
-        Me.Label4.TabIndex = 23
-        Me.Label4.Text = "Email"
-        '
-        'txtUsuarioEditarUsuarios
-        '
-        Me.txtUsuarioEditarUsuarios.Location = New System.Drawing.Point(24, 85)
-        Me.txtUsuarioEditarUsuarios.Name = "txtUsuarioEditarUsuarios"
-        Me.txtUsuarioEditarUsuarios.Size = New System.Drawing.Size(341, 20)
-        Me.txtUsuarioEditarUsuarios.TabIndex = 22
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(21, 64)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(54, 16)
-        Me.Label3.TabIndex = 21
-        Me.Label3.Text = "Usuario"
+        Me.Label5.Text = "Clave"
         '
         'txtNombreEditarUsuario
         '
@@ -228,15 +186,15 @@ Partial Class FormEditarUsuarios
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(21, 8)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(56, 16)
+        Me.Label2.Size = New System.Drawing.Size(125, 16)
         Me.Label2.TabIndex = 19
-        Me.Label2.Text = "Nombre"
+        Me.Label2.Text = "Nombre de Usuario"
         '
         'FormEditarUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(385, 470)
+        Me.ClientSize = New System.Drawing.Size(385, 339)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
@@ -261,12 +219,8 @@ Partial Class FormEditarUsuarios
     Friend WithEvents cbxRolEditarUsuario As ComboBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents txtPasswordEditarUsuario As TextBox
+    Friend WithEvents txtClaveEditarUsuario As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents txtEmailEditarUsuarios As TextBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents txtUsuarioEditarUsuarios As TextBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents txtNombreEditarUsuario As TextBox
     Friend WithEvents Label2 As Label
 End Class
