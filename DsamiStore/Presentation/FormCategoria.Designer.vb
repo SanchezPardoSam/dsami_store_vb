@@ -28,17 +28,17 @@ Partial Class FormCategoria
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnSiguiente = New System.Windows.Forms.Button()
+        Me.btnAnterior = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cbLimite = New System.Windows.Forms.ComboBox()
+        Me.tbPagina = New System.Windows.Forms.TextBox()
         Me.dgvCategorias = New System.Windows.Forms.DataGridView()
         Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Editar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.btnSiguiente = New System.Windows.Forms.Button()
-        Me.btnAnterior = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.cbLimite = New System.Windows.Forms.ComboBox()
-        Me.tbPagina = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvCategorias, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,7 +64,7 @@ Partial Class FormCategoria
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(812, 106)
         Me.Panel1.TabIndex = 2
@@ -72,7 +72,7 @@ Partial Class FormCategoria
         'tbBuscar
         '
         Me.tbBuscar.Location = New System.Drawing.Point(513, 67)
-        Me.tbBuscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tbBuscar.Margin = New System.Windows.Forms.Padding(2)
         Me.tbBuscar.Name = "tbBuscar"
         Me.tbBuscar.Size = New System.Drawing.Size(199, 20)
         Me.tbBuscar.TabIndex = 4
@@ -84,7 +84,7 @@ Partial Class FormCategoria
         Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscar.ForeColor = System.Drawing.Color.White
         Me.btnBuscar.Location = New System.Drawing.Point(716, 61)
-        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(87, 30)
         Me.btnBuscar.TabIndex = 3
@@ -98,7 +98,7 @@ Partial Class FormCategoria
         Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.ForeColor = System.Drawing.Color.White
         Me.btnAgregar.Location = New System.Drawing.Point(14, 61)
-        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(87, 30)
         Me.btnAgregar.TabIndex = 2
@@ -115,57 +115,10 @@ Partial Class FormCategoria
         Me.Panel2.Controls.Add(Me.dgvCategorias)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 106)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(812, 376)
         Me.Panel2.TabIndex = 5
-        '
-        'dgvCategorias
-        '
-        Me.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCategorias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.Nombre, Me.Descripcion, Me.Editar, Me.Eliminar})
-        Me.dgvCategorias.Location = New System.Drawing.Point(14, 19)
-        Me.dgvCategorias.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.dgvCategorias.Name = "dgvCategorias"
-        Me.dgvCategorias.RowHeadersWidth = 51
-        Me.dgvCategorias.RowTemplate.Height = 24
-        Me.dgvCategorias.Size = New System.Drawing.Size(788, 295)
-        Me.dgvCategorias.TabIndex = 0
-        '
-        'Codigo
-        '
-        Me.Codigo.HeaderText = "Codigo"
-        Me.Codigo.MinimumWidth = 6
-        Me.Codigo.Name = "Codigo"
-        Me.Codigo.Width = 110
-        '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.MinimumWidth = 6
-        Me.Nombre.Name = "Nombre"
-        Me.Nombre.Width = 125
-        '
-        'Descripcion
-        '
-        Me.Descripcion.HeaderText = "Descripcion"
-        Me.Descripcion.MinimumWidth = 6
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.Width = 250
-        '
-        'Editar
-        '
-        Me.Editar.HeaderText = "Editar"
-        Me.Editar.MinimumWidth = 6
-        Me.Editar.Name = "Editar"
-        Me.Editar.Width = 125
-        '
-        'Eliminar
-        '
-        Me.Eliminar.HeaderText = "Eliminar"
-        Me.Eliminar.MinimumWidth = 6
-        Me.Eliminar.Name = "Eliminar"
-        Me.Eliminar.Width = 125
         '
         'btnSiguiente
         '
@@ -211,6 +164,53 @@ Partial Class FormCategoria
         Me.tbPagina.Size = New System.Drawing.Size(30, 20)
         Me.tbPagina.TabIndex = 18
         '
+        'dgvCategorias
+        '
+        Me.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCategorias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.Nombre, Me.Descripcion, Me.Editar, Me.Eliminar})
+        Me.dgvCategorias.Location = New System.Drawing.Point(14, 19)
+        Me.dgvCategorias.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgvCategorias.Name = "dgvCategorias"
+        Me.dgvCategorias.RowHeadersWidth = 51
+        Me.dgvCategorias.RowTemplate.Height = 24
+        Me.dgvCategorias.Size = New System.Drawing.Size(788, 295)
+        Me.dgvCategorias.TabIndex = 0
+        '
+        'Codigo
+        '
+        Me.Codigo.HeaderText = "Codigo"
+        Me.Codigo.MinimumWidth = 6
+        Me.Codigo.Name = "Codigo"
+        Me.Codigo.Width = 110
+        '
+        'Nombre
+        '
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.MinimumWidth = 6
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.Width = 125
+        '
+        'Descripcion
+        '
+        Me.Descripcion.HeaderText = "Descripcion"
+        Me.Descripcion.MinimumWidth = 6
+        Me.Descripcion.Name = "Descripcion"
+        Me.Descripcion.Width = 250
+        '
+        'Editar
+        '
+        Me.Editar.HeaderText = "Editar"
+        Me.Editar.MinimumWidth = 6
+        Me.Editar.Name = "Editar"
+        Me.Editar.Width = 125
+        '
+        'Eliminar
+        '
+        Me.Eliminar.HeaderText = "Eliminar"
+        Me.Eliminar.MinimumWidth = 6
+        Me.Eliminar.Name = "Eliminar"
+        Me.Eliminar.Width = 125
+        '
         'FormCategoria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -218,7 +218,7 @@ Partial Class FormCategoria
         Me.ClientSize = New System.Drawing.Size(812, 482)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FormCategoria"
         Me.Text = "FormCategoria"
         Me.Panel1.ResumeLayout(False)

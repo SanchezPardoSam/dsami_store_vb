@@ -42,7 +42,10 @@ Public Class FormRoles
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Dim frmInsertarRol As New frmInsertarRol(Me)
         frmInsertarRol.Show()
-
+        'modal agregar editar y eliminar en una sola para visualizar
+        FormEditarRol.Show()
+        frmInsertarRol.Show()
+        FormEliminarRol.Show()
         If frmInsertarRol.IsDisposed Then
             Cargardatos()
         End If

@@ -97,4 +97,10 @@
 
         Cargardatos()
     End Sub
+
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        FormEditarUsuarios.Show()
+        FormInsertarUsuarios.Show()
+        FormEliminarUsuarios.Show()
+    End Sub
 End Class

@@ -172,6 +172,36 @@
     <Compile Include="Presentation\FormUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentation\form\FormEditarRol.Designer.vb">
+      <DependentUpon>FormEditarRol.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\form\FormEditarRol.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\form\FormEditarUsuarios.Designer.vb">
+      <DependentUpon>FormEditarUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\form\FormEditarUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\form\FormEliminarRol.Designer.vb">
+      <DependentUpon>FormEliminarRol.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\form\FormEliminarRol.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\form\FormEliminarUsuarios.Designer.vb">
+      <DependentUpon>FormEliminarUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\form\FormEliminarUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\form\FormInsertarUsuarios.Designer.vb">
+      <DependentUpon>FormInsertarUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\form\FormInsertarUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentation\form\frmInsertarProveedor.Designer.vb">
       <DependentUpon>frmInsertarProveedor.vb</DependentUpon>
     </Compile>
@@ -218,6 +248,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\FormUsuarios.resx">
       <DependentUpon>FormUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\form\FormEditarRol.resx">
+      <DependentUpon>FormEditarRol.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\form\FormEditarUsuarios.resx">
+      <DependentUpon>FormEditarUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\form\FormEliminarRol.resx">
+      <DependentUpon>FormEliminarRol.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\form\FormEliminarUsuarios.resx">
+      <DependentUpon>FormEliminarUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\form\FormInsertarUsuarios.resx">
+      <DependentUpon>FormInsertarUsuarios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\form\frmInsertarProveedor.resx">
       <DependentUpon>frmInsertarProveedor.vb</DependentUpon>
