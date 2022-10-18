@@ -23,6 +23,8 @@ Partial Class FormProductos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ButtonEdit = New System.Windows.Forms.Button()
+        Me.ButtonDelete = New System.Windows.Forms.Button()
         Me.tbBuscar = New System.Windows.Forms.TextBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
@@ -50,6 +52,8 @@ Partial Class FormProductos
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.ButtonEdit)
+        Me.Panel1.Controls.Add(Me.ButtonDelete)
         Me.Panel1.Controls.Add(Me.tbBuscar)
         Me.Panel1.Controls.Add(Me.btnBuscar)
         Me.Panel1.Controls.Add(Me.btnAgregar)
@@ -60,6 +64,31 @@ Partial Class FormProductos
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(812, 106)
         Me.Panel1.TabIndex = 3
+        '
+        'ButtonEdit
+        '
+        Me.ButtonEdit.BackColor = System.Drawing.Color.Gray
+        Me.ButtonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonEdit.ForeColor = System.Drawing.Color.White
+        Me.ButtonEdit.Location = New System.Drawing.Point(332, 61)
+        Me.ButtonEdit.Name = "ButtonEdit"
+        Me.ButtonEdit.Size = New System.Drawing.Size(88, 30)
+        Me.ButtonEdit.TabIndex = 6
+        Me.ButtonEdit.Text = "Editar"
+        Me.ButtonEdit.UseVisualStyleBackColor = False
+        '
+        'ButtonDelete
+        '
+        Me.ButtonDelete.BackColor = System.Drawing.Color.Gray
+        Me.ButtonDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.ButtonDelete.ForeColor = System.Drawing.Color.White
+        Me.ButtonDelete.Location = New System.Drawing.Point(440, 61)
+        Me.ButtonDelete.Name = "ButtonDelete"
+        Me.ButtonDelete.Size = New System.Drawing.Size(88, 30)
+        Me.ButtonDelete.TabIndex = 5
+        Me.ButtonDelete.Text = "Eliminar"
+        Me.ButtonDelete.UseVisualStyleBackColor = False
         '
         'tbBuscar
         '
@@ -284,4 +313,6 @@ Partial Class FormProductos
     Friend WithEvents Label3 As Label
     Friend WithEvents cbLimite As ComboBox
     Friend WithEvents tbPagina As TextBox
+    Friend WithEvents ButtonEdit As Button
+    Friend WithEvents ButtonDelete As Button
 End Class
