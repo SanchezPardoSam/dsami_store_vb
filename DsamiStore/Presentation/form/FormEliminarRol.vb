@@ -10,6 +10,8 @@
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
+        Dim nombre As String = padre.dgvRoles.CurrentRow.Cells.Item(1).Value
+        txtNombreEliminarRol.Text = nombre
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptarEliminarRol.Click
