@@ -43,13 +43,11 @@ Public Class Roles
     Public Function InsertarRol(rol As Roles)
         Try
             conectar()
-            Dim cod As String = "Cl" & rol.Nombre
-            Dim fecha As String = "2022-08-01"
-            Dim state As Integer = 0
 
-            Dim sql As String = "SP_Set_AgregarRoles '" & cod & "','" & rol.Nombre & "','" & fecha & "','" & state.ToString & "'"
-
+            Dim sql As String = "sp_rol_agregar @nombre"
             cmd = New SqlCommand(sql, con)
+            cmd.Parameters.AddWithValue("@nombre", rol.Nombre)
+
             If cmd.ExecuteNonQuery() Then
                 Return True
             Else
