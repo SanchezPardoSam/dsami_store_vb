@@ -186,9 +186,8 @@
             blProveedor.InsertarProveedor(prov)
 
             padre.Cargardatos()
-            Me.Close()
 
-            blProveedor.ConsultarProveedor()
+            Me.Close()
         Catch ex As Exception
             MsgBox(ex.Message & "/insertar")
         End Try

@@ -20,7 +20,6 @@
     Private Sub btnAceptarEliminarProveedor_Click(sender As Object, e As EventArgs) Handles btnAceptarEliminarProveedor.Click
         Try
             Dim codigo As String = padre.dgvProveedores.CurrentRow.Cells.Item(0).Value
-            MsgBox(codigo)
             _proveedorNegocio.EliminarProveedor(codigo)
 
             padre.Cargardatos()

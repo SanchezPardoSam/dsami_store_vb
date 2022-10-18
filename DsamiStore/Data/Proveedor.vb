@@ -248,9 +248,11 @@ Public Class Proveedor
 
             cmd.Connection = con
             cmd.CommandType = CommandType.StoredProcedure
-            MsgBox(provee.ToString())
+
             cmd.Parameters.AddWithValue("@in_i_id_proveedor", SqlDbType.VarChar).Value = provee.Id
 
+            Console.WriteLine("provee.Distrito")
+            Console.WriteLine(provee.Distrito)
             cmd.Parameters.AddWithValue("@in_v_direccion_ubicacion", SqlDbType.VarChar).Value = provee.Direccion
             cmd.Parameters.AddWithValue("@in_i_id_distrito", SqlDbType.VarChar).Value = provee.Distrito
             cmd.Parameters.AddWithValue("@in_v_valor_documento", SqlDbType.VarChar).Value = provee.Documento
@@ -308,12 +310,11 @@ Public Class Proveedor
             prov = New Proveedor()
 
             conectar()
-            cmd = New SqlCommand("sp_proveedor_buscar_id")
+
+            cmd = New SqlCommand("sp_proveedor_buscar @codigo")
+            cmd.Parameters.AddWithValue("@codigo", codigo)
 
             cmd.Connection = con
-            cmd.CommandType = CommandType.StoredProcedure
-
-            cmd.Parameters.AddWithValue("@in_i_id_proveedor", SqlDbType.NChar).Value = codigo
 
             dr = cmd.ExecuteReader
 

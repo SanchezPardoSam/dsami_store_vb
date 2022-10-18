@@ -1,5 +1,4 @@
 ﻿Public Class FormProveedores
-    Public selecionadoIndex As Integer
     Private Sub FormProveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cargardatos()
     End Sub
@@ -29,7 +28,6 @@
     End Sub
 
     Private Sub dgvProveedores_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProveedores.CellClick
-        selecionadoIndex = e.RowIndex
         btnEditar.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(94, Byte), Integer))
         btnEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer))
     End Sub
