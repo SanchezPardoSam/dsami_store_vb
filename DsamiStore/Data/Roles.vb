@@ -61,6 +61,49 @@ Public Class Roles
         End Try
     End Function
 
+    Public Function ActualizarRol(rol As Roles)
+        Try
+            conectar()
+
+            Dim sql As String = "sp_rol_actualizar @codigo, @nombre"
+            cmd = New SqlCommand(sql, con)
+            cmd.Parameters.AddWithValue("@codigo", rol.Id)
+            cmd.Parameters.AddWithValue("@nombre", rol.Nombre)
+
+            If cmd.ExecuteNonQuery() Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message & "/rol")
+        Finally
+            desconectar()
+        End Try
+    End Function
+
+    Public Function EliminarRol(codigo As String)
+        Try
+            conectar()
+
+            Dim sql As String = "sp_rol_eliminar @codigo"
+            cmd = New SqlCommand(sql, con)
+            cmd.Parameters.AddWithValue("@codigo", codigo)
+
+            If cmd.ExecuteNonQuery() Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message & "/rol")
+        Finally
+            desconectar()
+        End Try
+    End Function
+
     Public Function ConsultarRoles() As List(Of Roles)
         Try
             Dim listRol As List(Of Roles)

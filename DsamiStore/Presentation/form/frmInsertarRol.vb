@@ -11,6 +11,11 @@
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
+
+    Private Sub frmInsertarRol_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
             Dim blRol As New BLRol
@@ -23,9 +28,6 @@
         End Try
     End Sub
 
-    Private Sub frmInsertarRol_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Me.Close()

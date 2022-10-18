@@ -23,21 +23,23 @@ Partial Class FormRoles
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnEditar = New System.Windows.Forms.Button()
         Me.tbBuscar = New System.Windows.Forms.TextBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.dgvRoles = New System.Windows.Forms.DataGridView()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.editar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.btnAnterior = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cbLimite = New System.Windows.Forms.ComboBox()
         Me.tbPagina = New System.Windows.Forms.TextBox()
+        Me.dgvRoles = New System.Windows.Forms.DataGridView()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.editar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvRoles, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -45,21 +47,51 @@ Partial Class FormRoles
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.btnEliminar)
+        Me.Panel1.Controls.Add(Me.btnEditar)
         Me.Panel1.Controls.Add(Me.tbBuscar)
         Me.Panel1.Controls.Add(Me.btnBuscar)
         Me.Panel1.Controls.Add(Me.btnAgregar)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(812, 106)
         Me.Panel1.TabIndex = 3
         '
+        'btnEliminar
+        '
+        Me.btnEliminar.BackColor = System.Drawing.Color.Gray
+        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.ForeColor = System.Drawing.Color.White
+        Me.btnEliminar.Location = New System.Drawing.Point(441, 61)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(87, 30)
+        Me.btnEliminar.TabIndex = 6
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = False
+        '
+        'btnEditar
+        '
+        Me.btnEditar.BackColor = System.Drawing.Color.Gray
+        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditar.ForeColor = System.Drawing.Color.White
+        Me.btnEditar.Location = New System.Drawing.Point(338, 61)
+        Me.btnEditar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(87, 30)
+        Me.btnEditar.TabIndex = 5
+        Me.btnEditar.Text = "Editar"
+        Me.btnEditar.UseVisualStyleBackColor = False
+        '
         'tbBuscar
         '
         Me.tbBuscar.Location = New System.Drawing.Point(544, 67)
-        Me.tbBuscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tbBuscar.Margin = New System.Windows.Forms.Padding(2)
         Me.tbBuscar.Name = "tbBuscar"
         Me.tbBuscar.Size = New System.Drawing.Size(168, 20)
         Me.tbBuscar.TabIndex = 4
@@ -70,7 +102,7 @@ Partial Class FormRoles
         Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscar.ForeColor = System.Drawing.Color.White
         Me.btnBuscar.Location = New System.Drawing.Point(716, 61)
-        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(87, 30)
         Me.btnBuscar.TabIndex = 3
@@ -84,7 +116,7 @@ Partial Class FormRoles
         Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.ForeColor = System.Drawing.Color.White
         Me.btnAgregar.Location = New System.Drawing.Point(14, 61)
-        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(87, 30)
         Me.btnAgregar.TabIndex = 2
@@ -113,52 +145,10 @@ Partial Class FormRoles
         Me.Panel2.Controls.Add(Me.dgvRoles)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 106)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(812, 315)
         Me.Panel2.TabIndex = 5
-        '
-        'dgvRoles
-        '
-        Me.dgvRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvRoles.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre, Me.editar, Me.eliminar})
-        Me.dgvRoles.Location = New System.Drawing.Point(14, 19)
-        Me.dgvRoles.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.dgvRoles.Name = "dgvRoles"
-        Me.dgvRoles.RowHeadersWidth = 51
-        Me.dgvRoles.RowTemplate.Height = 24
-        Me.dgvRoles.Size = New System.Drawing.Size(788, 232)
-        Me.dgvRoles.TabIndex = 0
-        '
-        'codigo
-        '
-        Me.codigo.HeaderText = "Codigo"
-        Me.codigo.MinimumWidth = 6
-        Me.codigo.Name = "codigo"
-        Me.codigo.Width = 125
-        '
-        'nombre
-        '
-        Me.nombre.HeaderText = "Nombre"
-        Me.nombre.MinimumWidth = 6
-        Me.nombre.Name = "nombre"
-        Me.nombre.Width = 125
-        '
-        'editar
-        '
-        Me.editar.HeaderText = "Edicion"
-        Me.editar.MinimumWidth = 6
-        Me.editar.Name = "editar"
-        Me.editar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.editar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.editar.Width = 125
-        '
-        'eliminar
-        '
-        Me.eliminar.HeaderText = "Eliminar"
-        Me.eliminar.MinimumWidth = 6
-        Me.eliminar.Name = "eliminar"
-        Me.eliminar.Width = 125
         '
         'btnSiguiente
         '
@@ -204,6 +194,48 @@ Partial Class FormRoles
         Me.tbPagina.Size = New System.Drawing.Size(30, 20)
         Me.tbPagina.TabIndex = 13
         '
+        'dgvRoles
+        '
+        Me.dgvRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvRoles.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre, Me.editar, Me.eliminar})
+        Me.dgvRoles.Location = New System.Drawing.Point(14, 19)
+        Me.dgvRoles.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgvRoles.Name = "dgvRoles"
+        Me.dgvRoles.RowHeadersWidth = 51
+        Me.dgvRoles.RowTemplate.Height = 24
+        Me.dgvRoles.Size = New System.Drawing.Size(788, 232)
+        Me.dgvRoles.TabIndex = 0
+        '
+        'codigo
+        '
+        Me.codigo.HeaderText = "Codigo"
+        Me.codigo.MinimumWidth = 6
+        Me.codigo.Name = "codigo"
+        Me.codigo.Width = 125
+        '
+        'nombre
+        '
+        Me.nombre.HeaderText = "Nombre"
+        Me.nombre.MinimumWidth = 6
+        Me.nombre.Name = "nombre"
+        Me.nombre.Width = 125
+        '
+        'editar
+        '
+        Me.editar.HeaderText = "Edicion"
+        Me.editar.MinimumWidth = 6
+        Me.editar.Name = "editar"
+        Me.editar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.editar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.editar.Width = 125
+        '
+        'eliminar
+        '
+        Me.eliminar.HeaderText = "Eliminar"
+        Me.eliminar.MinimumWidth = 6
+        Me.eliminar.Name = "eliminar"
+        Me.eliminar.Width = 125
+        '
         'FormRoles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -211,7 +243,7 @@ Partial Class FormRoles
         Me.ClientSize = New System.Drawing.Size(812, 421)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FormRoles"
         Me.Text = "FormRoles"
         Me.Panel1.ResumeLayout(False)
@@ -239,4 +271,6 @@ Partial Class FormRoles
     Friend WithEvents Label3 As Label
     Friend WithEvents cbLimite As ComboBox
     Friend WithEvents tbPagina As TextBox
+    Friend WithEvents btnEliminar As Button
+    Friend WithEvents btnEditar As Button
 End Class
