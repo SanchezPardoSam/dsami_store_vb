@@ -83,6 +83,7 @@
   <ItemGroup>
     <Compile Include="Business Logic\BLCategoria.vb" />
     <Compile Include="Business Logic\BLEmpleado.vb" />
+    <Compile Include="Business Logic\BLProducto.vb" />
     <Compile Include="Business Logic\BLProveedor.vb" />
     <Compile Include="Business Logic\BLRol.vb" />
     <Compile Include="Business Logic\BLUsuario.vb" />
