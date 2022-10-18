@@ -208,6 +208,8 @@ Public Class Proveedor
             cmd.CommandType = CommandType.StoredProcedure
             MsgBox(provee.ToString())
             cmd.Parameters.AddWithValue("@in_v_direccion_ubicacion", SqlDbType.VarChar).Value = provee.Direccion
+            Console.WriteLine(provee.Distrito)
+            Console.WriteLine("provee.Distrito")
             cmd.Parameters.AddWithValue("@in_i_id_distrito", SqlDbType.VarChar).Value = provee.Distrito
             cmd.Parameters.AddWithValue("@in_v_valor_documento", SqlDbType.VarChar).Value = provee.Documento
             cmd.Parameters.AddWithValue("@in_i_id_tipo_documento", SqlDbType.VarChar).Value = provee.Tipo
@@ -215,9 +217,12 @@ Public Class Proveedor
 
             cmd.Parameters.AddWithValue("@in_v_apellido_paterno_persona", SqlDbType.VarChar).Value = provee.ApellidoPaterno
             cmd.Parameters.AddWithValue("@in_v_apellido_materno_persona", SqlDbType.VarChar).Value = provee.ApellidoMaterno
-
+            Console.WriteLine(provee.ApellidoPaterno)
+            Console.WriteLine("provee.ApellidoPaterno")
             cmd.Parameters.AddWithValue("@in_d_fecha_nacimiento_persona", SqlDbType.Date).Value = provee.FechaNacimiento
             cmd.Parameters.AddWithValue("@in_i_id_pais_origen", SqlDbType.VarChar).Value = provee.Pais
+            Console.WriteLine(provee.Empresa)
+            Console.WriteLine("provee.Empresa")
             cmd.Parameters.AddWithValue("@in_i_id_empresa", SqlDbType.Char).Value = provee.Empresa
 
             If cmd.ExecuteNonQuery() Then

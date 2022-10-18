@@ -13,6 +13,13 @@
     Private listaProvincias As New List(Of Provincia)
     Private listaDistritos As New List(Of Distrito)
 
+    Private dtEmpresa As New DataTable()
+    Private dtTipoDocumento As New DataTable()
+    Private dtPais As New DataTable()
+    Private dtRegion As New DataTable()
+    Private dtProvincia As New DataTable()
+    Private dtDistrito As New DataTable()
+
     Dim codigo As String
     Public Sub New(padre As FormProveedores)
         Me.padre = padre
@@ -20,37 +27,133 @@
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        dtEmpresa.Columns.Add("id")
+        dtEmpresa.Columns.Add("nombre")
+        cbxEmpresa.DataSource = dtEmpresa
+        cbxEmpresa.ValueMember = "id"
+        cbxEmpresa.DisplayMember = "nombre"
 
+        dtTipoDocumento.Columns.Add("id")
+        dtTipoDocumento.Columns.Add("nombre")
+        cbxTipoDocumento.DataSource = dtTipoDocumento
+        cbxTipoDocumento.ValueMember = "id"
+        cbxTipoDocumento.DisplayMember = "nombre"
+
+        dtPais.Columns.Add("id")
+        dtPais.Columns.Add("nombre")
+        cbxPais.DataSource = dtPais
+        cbxPais.ValueMember = "id"
+        cbxPais.DisplayMember = "nombre"
+
+        dtRegion.Columns.Add("id")
+        dtRegion.Columns.Add("nombre")
+        cbxRegion.DataSource = dtRegion
+        cbxRegion.ValueMember = "id"
+        cbxRegion.DisplayMember = "nombre"
+
+        dtProvincia.Columns.Add("id")
+        dtProvincia.Columns.Add("nombre")
+        cbxProvincia.DataSource = dtProvincia
+        cbxProvincia.ValueMember = "id"
+        cbxProvincia.DisplayMember = "nombre"
+
+        dtDistrito.Columns.Add("id")
+        dtDistrito.Columns.Add("nombre")
+        cbxDistrito.DataSource = dtDistrito
+        cbxDistrito.ValueMember = "id"
+        cbxDistrito.DisplayMember = "nombre"
     End Sub
+
+
     Private Sub frmInsertarProveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim listaEmpresa = blEmpresa.ConsultarEmpresa()
 
-        cbxEmpresa.Text = "Selecionar empresa"
-
-        For x = 0 To listaEmpresa.Count - 1 Step 1
-            cbxEmpresa.Items.Add(listaEmpresa(x).RazonSocial)
+        Dim empresas = blEmpresa.ConsultarEmpresa()
+        For x = 0 To empresas.Count - 1 Step 1
+            dtEmpresa.Rows.Add(empresas(x).Id, empresas(x).RazonSocial)
         Next
 
-        Dim listaPais = blPais.ConsultarPais()
-        cbxPais.Text = "Selecionar pais"
-        For x = 0 To listaPais.Count - 1 Step 1
-            cbxPais.Items.Add(listaPais(x).Nombre)
+        Dim tipoDocumentos = blDocumento.ConsultarDocumentos()
+        For x = 0 To tipoDocumentos.Count - 1 Step 1
+            dtTipoDocumento.Rows.Add(tipoDocumentos(x).Id, tipoDocumentos(x).Nombre)
         Next
 
-        Dim listaDocumento = blDocumento.ConsultarDocumentos()
-        cbxTipoDocumento.Text = "Selecionar documento"
-        For x = 0 To listaDocumento.Count - 1 Step 1
-            cbxTipoDocumento.Items.Add(listaDocumento(x).Nombre)
+        Dim paises = blPais.ConsultarPais()
+        For x = 0 To paises.Count - 1 Step 1
+            dtPais.Rows.Add(paises(x).Id, paises(x).Nombre)
         Next
 
-        cbxRegion.Text = "Selecionar region"
-        cbxProvincia.Text = "Selecionar provincia"
-        cbxDistrito.Text = "Selecionar distrito"
+        If paises.Count = 0 Then
+        Else
+            ObtenerRegiones(paises.Item(0).Id)
+        End If
+
+
+        ' cbxPais.SelectedIndex = -1
+        ' cbxTipoDocumento.Text = "Selecionar documento"
+        ' cbxEmpresa.Text = "Selecionar pais"
+        ' cbxRegion.Text = "Selecionar region"
+        ' cbxProvincia.Text = "Selecionar provincia"
+        ' cbxDistrito.Text = "Selecionar distrito"
 
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Me.Close()
+    End Sub
+
+    Public Sub ObtenerPais(codigo As String)
+        Dim paises = blPais.ConsultarPais()
+        For x = 0 To paises.Count - 1 Step 1
+            dtPais.Rows.Add(paises(x).Id, paises(x).Nombre)
+        Next
+
+        If paises.Count = 0 Then
+        Else
+            cbxPais.SelectedIndex = 0
+
+            ObtenerRegiones(paises.Item(0).Id)
+        End If
+    End Sub
+
+    Public Sub ObtenerRegiones(codigo As String)
+        Dim regiones = blRegion.ConsultarRegion(codigo)
+        For x = 0 To regiones.Count - 1 Step 1
+            dtRegion.Rows.Add(regiones(x).Id_Region, regiones(x).Nombre_Region)
+        Next
+
+        If regiones.Count = 0 Then
+        Else
+            cbxRegion.SelectedIndex = 0
+
+            ObtenerProvincias(regiones.Item(0).Id_Region)
+        End If
+    End Sub
+
+    Public Sub ObtenerProvincias(codigo As String)
+        Dim provincias = blProvincia.ConsultarProvincias(codigo)
+        For x = 0 To provincias.Count - 1 Step 1
+            dtProvincia.Rows.Add(provincias(x).Id_Provincia, provincias(x).Nombre_Provincia)
+        Next
+
+        If provincias.Count = 0 Then
+        Else
+            cbxProvincia.SelectedIndex = 0
+
+            ObtenerDistritos(provincias.Item(0).Id_Provincia)
+        End If
+    End Sub
+
+
+    Public Sub ObtenerDistritos(codigo As String)
+        Dim distritos = blDistrito.ConsultarDistritos(codigo)
+        For x = 0 To distritos.Count - 1 Step 1
+            dtDistrito.Rows.Add(distritos(x).Id, distritos(x).Nombre)
+        Next
+
+        If distritos.Count = 0 Then
+        Else
+            cbxDistrito.SelectedIndex = 0
+        End If
     End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
@@ -62,12 +165,12 @@
             prov.ApellidoMaterno = txtApellidoMaterno.Text
             prov.ApellidoPaterno = txtApellidoPaterno.Text
             prov.Documento = txtDocumento.Text
-            prov.Tipo = ObtenerIdDocumento(cbxTipoDocumento.SelectedItem.ToString())
-            prov.Empresa = ObtenerIdEmpresa(cbxEmpresa.SelectedItem.ToString())
-            prov.Pais = ObtenerIdPais(cbxPais.SelectedItem.ToString())
+            prov.Tipo = cbxTipoDocumento.SelectedItem.Row.Item("id")
+            prov.Empresa = cbxEmpresa.SelectedItem.Row.Item("id")
+            prov.Pais = cbxPais.SelectedItem.Row.Item("id")
             prov.Region = cbxRegion.SelectedItem.ToString()
             prov.Provincia = cbxProvincia.SelectedItem.ToString()
-            prov.Distrito = ObtenerIdDistrito(cbxDistrito.SelectedItem.ToString(), cbxProvincia.SelectedItem.ToString())
+            prov.Distrito = cbxDistrito.SelectedItem.Row.Item("id")
             prov.Direccion = txtDireccion.Text
             prov.FechaNacimiento = dtpNacimiento.Value
 
@@ -83,126 +186,70 @@
     End Sub
 
     Private Sub cbxPais_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxPais.SelectedIndexChanged
-        Dim pais As String = cbxPais.SelectedItem.ToString()
+        If cbxPais.SelectedItem Is Nothing Then
+            Return
+        End If
 
-        listaPais = blPais.ConsultarPais()
-        For x = 0 To listaPais.Count - 1 Step 1
-            If pais = listaPais(x).Nombre Then
+        Dim paisId As String = cbxPais.SelectedItem.Row.Item("id")
 
-                listaRegiones = blRegion.ConsultarRegion(listaPais(x).Id)
+        listaRegiones = blRegion.ConsultarRegion(paisId)
 
-            End If
-        Next
+        dtRegion.Rows.Clear()
 
         If listaRegiones.Count = 0 Then
             MsgBox("Valor de pais incorrecto")
         Else
             For x = 0 To listaRegiones.Count - 1 Step 1
-                cbxRegion.Items.Add(listaRegiones(x).Nombre_Region)
+                dtRegion.Rows.Add(listaRegiones(x).Id_Region, listaRegiones(x).Nombre_Region)
             Next
         End If
-
-
     End Sub
     Private Sub cbxRegion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxRegion.SelectedIndexChanged
-        Dim region As String = cbxRegion.SelectedItem.ToString()
+        If cbxRegion.SelectedItem Is Nothing Then
+            Return
+        End If
 
-        For x = 0 To listaRegiones.Count - 1 Step 1
-            If region = listaRegiones(x).Nombre_Region Then
+        Dim regionId As String = cbxRegion.SelectedItem.Row.Item("id")
 
-                listaProvincias = blProvincia.ConsultarProvincias(listaRegiones(x).Id_Region)
+        listaProvincias = blProvincia.ConsultarProvincias(regionId)
 
-            End If
-        Next
+        dtProvincia.Rows.Clear()
 
         If listaProvincias.Count = 0 Then
             MsgBox("Valor de pais incorrecto")
         Else
             For x = 0 To listaProvincias.Count - 1 Step 1
-                cbxProvincia.Items.Add(listaProvincias(x).Nombre_Provincia)
+                dtProvincia.Rows.Add(listaProvincias(x).Id_Provincia, listaProvincias(x).Nombre_Provincia)
             Next
         End If
     End Sub
 
     Private Sub cbxProvincia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxProvincia.SelectedIndexChanged
-        Dim provincia As String = cbxProvincia.SelectedItem.ToString()
+        If cbxProvincia.SelectedItem Is Nothing Then
+            Return
+        End If
 
-        For x = 0 To listaProvincias.Count - 1 Step 1
-            If provincia = listaProvincias(x).Nombre_Provincia Then
-                codigo = listaProvincias(x).Id_Provincia
-                listaDistritos = blDistrito.ConsultarDistritos(listaProvincias(x).Id_Provincia)
+        Dim provinciaId As String = cbxProvincia.SelectedItem.Row.Item("id")
 
-            End If
-        Next
+        codigo = provinciaId
+        listaDistritos = blDistrito.ConsultarDistritos(provinciaId)
+
+        dtDistrito.Rows.Clear()
 
         If listaDistritos.Count = 0 Then
             MsgBox("Valor de pais incorrecto")
         Else
             For x = 0 To listaDistritos.Count - 1 Step 1
-                cbxDistrito.Items.Add(listaDistritos(x).Nombre)
+                dtDistrito.Rows.Add(listaDistritos(x).Id, listaDistritos(x).Nombre)
             Next
         End If
     End Sub
 
-    Private Function ObtenerIdDocumento(nombre As String) As String
-        Dim listDocumento As List(Of Documento)
-        listDocumento = blDocumento.ConsultarDocumentos()
-
-        For x = 0 To listDocumento.Count - 1 Step 1
-            If listDocumento(x).Nombre = nombre Then
-                Return listDocumento(x).Id
-            Else
-                Return ""
-            End If
-        Next
-        Return ""
-    End Function
-
-    Private Function ObtenerIdPais(nombre As String) As String
-
-        listaPais = blPais.ConsultarPais()
-
-        For x = 0 To listaPais.Count - 1 Step 1
-            If listaPais(x).Nombre = nombre Then
-                Return listaPais(x).Id
-            Else
-                Return ""
-            End If
-        Next
-        Return ""
-    End Function
-
-    Private Function ObtenerIdEmpresa(nombre As String) As String
-        Dim listEmpresa As List(Of Empresa)
-        listEmpresa = blEmpresa.ConsultarEmpresa()
-        MsgBox(nombre)
-        For x = 0 To listEmpresa.Count - 1 Step 1
-            If listEmpresa(x).RazonSocial = nombre Then
-                MsgBox(listEmpresa(x).Id)
-                Return listEmpresa(x).Id
-
-            Else
-                Return ""
-            End If
-        Next
-        Return ""
-    End Function
-
-    Private Function ObtenerIdDistrito(nombre As String, cod As String) As String
-        MsgBox(cod)
-        listaDistritos = blDistrito.ConsultarDistritos(codigo)
-
-        For x = 0 To listaDistritos.Count - 1 Step 1
-            If listaDistritos(x).Nombre = nombre Then
-                Return listaDistritos(x).Id
-            Else
-                Return ""
-            End If
-        Next
-        Return ""
-    End Function
-
     Private Sub dtpNacimiento_ValueChanged(sender As Object, e As EventArgs) Handles dtpNacimiento.ValueChanged
         MsgBox(dtpNacimiento.Value)
+    End Sub
+
+    Private Sub cbxEmpresa_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxEmpresa.SelectedIndexChanged
+
     End Sub
 End Class
