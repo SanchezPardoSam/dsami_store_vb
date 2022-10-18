@@ -38,6 +38,19 @@ Public Class Proveedor
         _provincia = provincia
         _ruc = ruc
     End Sub
+    Public Sub New(nombre As String, paterno As String, materno As String, idTipoDocumento As String,
+                   documento As String, nacimiento As String, idEmpresa As String, idPais As String,
+                   idRegion As String, idProvincia As String, idDistrito As String, direccion As String)
+
+        MyBase.New(nombre, paterno, materno, documento, nacimiento, idPais)
+        _tipo = idTipoDocumento
+        _empresa = idEmpresa
+        _region = idRegion
+        _provincia = idProvincia
+        _distrito = idDistrito
+        _direccion = direccion
+
+    End Sub
 
     Public Sub New()
         MyBase.New()
@@ -177,6 +190,46 @@ Public Class Proveedor
         Catch ex As Exception
             MsgBox(ex.Message & " Proveedor")
             Return Nothing
+        Finally
+            con.Close()
+        End Try
+    End Function
+
+
+    Public Function InsertarProveedor(provee As Proveedor)
+        Try
+            cmd = New SqlCommand("sp_proveedor_listar 
+                                @direccion, 
+                                @idDistrito, 
+                                @documento,
+                                @idTipoDocumento, 
+                                @nombre, 
+                                @apellidoP, 
+                                @apellidoM,                            
+                                @nacimiento, 
+                                @idPais, 
+                                @idEmpresa")
+            cmd.CommandType = CommandType.Text
+            With cmd.Parameters
+                .AddWithValue("@direccion", provee.Direccion)
+                .AddWithValue("@idDistrito", provee.Direccion)
+                .AddWithValue("@documento", provee.Direccion)
+                .AddWithValue("@idTipoDocumento", provee.Direccion)
+                .AddWithValue("@nombre", provee.Direccion)
+                .AddWithValue("@apellidoP", provee.Direccion)
+                .AddWithValue("@apellidoM", provee.Direccion)
+                .AddWithValue("@nacimiento", provee.Direccion)
+                .AddWithValue("@idPais", provee.Direccion)
+                .AddWithValue("@idEmpresa", provee.Direccion)
+            End With
+            If cmd.ExecuteNonQuery() Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message & " Proveedor")
+            Return False
         Finally
             con.Close()
         End Try

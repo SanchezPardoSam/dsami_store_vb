@@ -83,6 +83,7 @@
   <ItemGroup>
     <Compile Include="Business Logic\BLCategoria.vb" />
     <Compile Include="Business Logic\BLEmpleado.vb" />
+    <Compile Include="Business Logic\BLEmpresa.vb" />
     <Compile Include="Business Logic\BLProducto.vb" />
     <Compile Include="Business Logic\BLProveedor.vb" />
     <Compile Include="Business Logic\BLRol.vb" />
@@ -166,6 +167,12 @@
     <Compile Include="Presentation\FormUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentation\form\frmInsertarProveedor.Designer.vb">
+      <DependentUpon>frmInsertarProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\form\frmInsertarProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentation\form\frmInsertarRol.Designer.vb">
       <DependentUpon>frmInsertarRol.vb</DependentUpon>
     </Compile>
@@ -206,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\FormUsuarios.resx">
       <DependentUpon>FormUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\form\frmInsertarProveedor.resx">
+      <DependentUpon>frmInsertarProveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\form\frmInsertarRol.resx">
       <DependentUpon>frmInsertarRol.vb</DependentUpon>
