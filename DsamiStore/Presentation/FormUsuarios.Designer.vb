@@ -23,6 +23,8 @@ Partial Class FormUsuarios
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnEditar = New System.Windows.Forms.Button()
         Me.tbBuscar = New System.Windows.Forms.TextBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
@@ -30,16 +32,14 @@ Partial Class FormUsuarios
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.email = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rol = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.editar = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.eliminar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnAnterior = New System.Windows.Forms.Button()
         Me.cbLimite = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tbPagina = New System.Windows.Forms.TextBox()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.email = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rol = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,6 +47,8 @@ Partial Class FormUsuarios
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.btnEliminar)
+        Me.Panel1.Controls.Add(Me.btnEditar)
         Me.Panel1.Controls.Add(Me.tbBuscar)
         Me.Panel1.Controls.Add(Me.btnBuscar)
         Me.Panel1.Controls.Add(Me.btnAgregar)
@@ -57,6 +59,34 @@ Partial Class FormUsuarios
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(812, 106)
         Me.Panel1.TabIndex = 3
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.BackColor = System.Drawing.Color.Gray
+        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.ForeColor = System.Drawing.Color.White
+        Me.btnEliminar.Location = New System.Drawing.Point(443, 61)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(87, 30)
+        Me.btnEliminar.TabIndex = 8
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = False
+        '
+        'btnEditar
+        '
+        Me.btnEditar.BackColor = System.Drawing.Color.Gray
+        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditar.ForeColor = System.Drawing.Color.White
+        Me.btnEditar.Location = New System.Drawing.Point(340, 61)
+        Me.btnEditar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(87, 30)
+        Me.btnEditar.TabIndex = 7
+        Me.btnEditar.Text = "Editar"
+        Me.btnEditar.UseVisualStyleBackColor = False
         '
         'tbBuscar
         '
@@ -132,7 +162,7 @@ Partial Class FormUsuarios
         'dgvUsuarios
         '
         Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre, Me.email, Me.rol, Me.editar, Me.eliminar})
+        Me.dgvUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre, Me.email, Me.rol})
         Me.dgvUsuarios.Location = New System.Drawing.Point(14, 19)
         Me.dgvUsuarios.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvUsuarios.Name = "dgvUsuarios"
@@ -140,48 +170,6 @@ Partial Class FormUsuarios
         Me.dgvUsuarios.RowTemplate.Height = 24
         Me.dgvUsuarios.Size = New System.Drawing.Size(788, 232)
         Me.dgvUsuarios.TabIndex = 0
-        '
-        'codigo
-        '
-        Me.codigo.HeaderText = "Codigo"
-        Me.codigo.MinimumWidth = 6
-        Me.codigo.Name = "codigo"
-        Me.codigo.Width = 125
-        '
-        'nombre
-        '
-        Me.nombre.HeaderText = "Nombre"
-        Me.nombre.MinimumWidth = 6
-        Me.nombre.Name = "nombre"
-        Me.nombre.Width = 125
-        '
-        'email
-        '
-        Me.email.HeaderText = "Email"
-        Me.email.MinimumWidth = 6
-        Me.email.Name = "email"
-        Me.email.Width = 125
-        '
-        'rol
-        '
-        Me.rol.HeaderText = "Rol"
-        Me.rol.MinimumWidth = 6
-        Me.rol.Name = "rol"
-        Me.rol.Width = 125
-        '
-        'editar
-        '
-        Me.editar.HeaderText = "Editar"
-        Me.editar.MinimumWidth = 6
-        Me.editar.Name = "editar"
-        Me.editar.Width = 125
-        '
-        'eliminar
-        '
-        Me.eliminar.HeaderText = "Eliminar"
-        Me.eliminar.MinimumWidth = 6
-        Me.eliminar.Name = "eliminar"
-        Me.eliminar.Width = 125
         '
         'btnAnterior
         '
@@ -218,6 +206,34 @@ Partial Class FormUsuarios
         Me.tbPagina.Size = New System.Drawing.Size(30, 20)
         Me.tbPagina.TabIndex = 18
         '
+        'codigo
+        '
+        Me.codigo.HeaderText = "Codigo"
+        Me.codigo.MinimumWidth = 6
+        Me.codigo.Name = "codigo"
+        Me.codigo.Width = 125
+        '
+        'nombre
+        '
+        Me.nombre.HeaderText = "Nombre de usuario"
+        Me.nombre.MinimumWidth = 6
+        Me.nombre.Name = "nombre"
+        Me.nombre.Width = 125
+        '
+        'email
+        '
+        Me.email.HeaderText = "Empleado"
+        Me.email.MinimumWidth = 6
+        Me.email.Name = "email"
+        Me.email.Width = 125
+        '
+        'rol
+        '
+        Me.rol.HeaderText = "Rol"
+        Me.rol.MinimumWidth = 6
+        Me.rol.Name = "rol"
+        Me.rol.Width = 125
+        '
         'FormUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -244,15 +260,15 @@ Partial Class FormUsuarios
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents dgvUsuarios As DataGridView
-    Friend WithEvents codigo As DataGridViewTextBoxColumn
-    Friend WithEvents nombre As DataGridViewTextBoxColumn
-    Friend WithEvents email As DataGridViewTextBoxColumn
-    Friend WithEvents rol As DataGridViewTextBoxColumn
-    Friend WithEvents editar As DataGridViewTextBoxColumn
-    Friend WithEvents eliminar As DataGridViewTextBoxColumn
     Friend WithEvents btnSiguiente As Button
     Friend WithEvents btnAnterior As Button
     Friend WithEvents cbLimite As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents tbPagina As TextBox
+    Friend WithEvents btnEliminar As Button
+    Friend WithEvents btnEditar As Button
+    Friend WithEvents codigo As DataGridViewTextBoxColumn
+    Friend WithEvents nombre As DataGridViewTextBoxColumn
+    Friend WithEvents email As DataGridViewTextBoxColumn
+    Friend WithEvents rol As DataGridViewTextBoxColumn
 End Class

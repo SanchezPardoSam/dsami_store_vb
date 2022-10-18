@@ -7,6 +7,7 @@ Public Class Usuario
     Private clave As String
     Private codigoEmpleado As String
     Private _nombreEmpleado
+    Private _apellidoEmpleado
     Private codigoRol As String
     Private _nombreRol As String
 
@@ -69,6 +70,15 @@ Public Class Usuario
         End Set
     End Property
 
+    Public Property ApellidoEmpleado As Object
+        Get
+            Return _apellidoEmpleado
+        End Get
+        Set(value As Object)
+            _apellidoEmpleado = value
+        End Set
+    End Property
+
     Public Property NombreRol As String
         Get
             Return _nombreRol
@@ -79,13 +89,14 @@ Public Class Usuario
     End Property
 
     Public Sub New(codigoUsuario As String, nombreUsuario As String, clave As String,
-                   codigoEmpleado As String, nombreEmpleado As Object,
+                   codigoEmpleado As String, nombreEmpleado As Object, apellidoEmpleado As Object,
                    codigoRol As String, nombreRol As String)
         Me.codigoUsuario = codigoUsuario
         Me.nombreUsuario = nombreUsuario
         Me.clave = clave
         Me.codigoEmpleado = codigoEmpleado
         _nombreEmpleado = nombreEmpleado
+        _apellidoEmpleado = apellidoEmpleado
         Me.codigoRol = codigoRol
         _nombreRol = nombreRol
     End Sub
@@ -93,6 +104,75 @@ Public Class Usuario
     Public Sub New()
     End Sub
 
+    Public Function InsertarUsuario(usuario As Usuario)
+        Try
+            conectar()
+            Console.WriteLine(usuario.Codigo_Empleado)
+            Console.WriteLine(usuario.Codigo_Rol)
+            Dim sql As String = "sp_usuario_agregar @nombreUsuario, @clave, @codigoEmpleado, @codigoRol"
+            cmd = New SqlCommand(sql, con)
+            cmd.Parameters.AddWithValue("@nombreUsuario", usuario.Nombre_Usuario)
+            cmd.Parameters.AddWithValue("@clave", usuario.Clave_Usuario)
+            cmd.Parameters.AddWithValue("@codigoEmpleado", usuario.Codigo_Empleado)
+            cmd.Parameters.AddWithValue("@codigoRol", usuario.Codigo_Rol)
+
+            If cmd.ExecuteNonQuery() Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message & "/categoria")
+        Finally
+            desconectar()
+        End Try
+    End Function
+
+    Public Function ActualizarUsuario(usuario As Usuario)
+        Try
+            conectar()
+
+            Dim sql As String = "sp_usuario_actualizar @codigo, @nombreUsuario, @clave, @codigoRol"
+            cmd = New SqlCommand(sql, con)
+            cmd.Parameters.AddWithValue("@codigo", usuario.Codigo_Usuario)
+            cmd.Parameters.AddWithValue("@nombreUsuario", usuario.Nombre_Usuario)
+            cmd.Parameters.AddWithValue("@clave", usuario.Clave_Usuario)
+            cmd.Parameters.AddWithValue("@codigoRol", usuario.Codigo_Rol)
+
+            If cmd.ExecuteNonQuery() Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message & "/rol")
+        Finally
+            desconectar()
+        End Try
+    End Function
+
+    Public Function EliminarUsuario(codigo As String)
+        Try
+            conectar()
+
+            Dim sql As String = "sp_usuario_eliminar @codigo"
+            cmd = New SqlCommand(sql, con)
+            cmd.Parameters.AddWithValue("@codigo", codigo)
+
+            If cmd.ExecuteNonQuery() Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message & "/categoria")
+        Finally
+            desconectar()
+        End Try
+    End Function
     Public Function ConsultarUsuario() As List(Of Usuario)
         Try
             Dim listUser As List(Of Usuario)
@@ -114,6 +194,7 @@ Public Class Usuario
                             dr.Item("v_password_usuario"),
                             dr.Item("i_id_empleado"),
                             dr.Item("v_nombre_persona"),
+                            dr.Item("v_apellido_paterno_persona"),
                             dr.Item("i_id_rol"),
                             dr.Item("v_nombre_rol")
                             ))
@@ -178,6 +259,7 @@ Public Class Usuario
                             dr.Item("v_password_usuario"),
                             dr.Item("i_id_empleado"),
                             dr.Item("v_nombre_persona"),
+                            dr.Item("v_apellido_paterno_persona"),
                             dr.Item("i_id_rol"),
                             dr.Item("v_nombre_rol")
                             ))
@@ -190,6 +272,47 @@ Public Class Usuario
 
         Catch ex As Exception
             MsgBox(ex.Message & " USUARIO")
+            Return Nothing
+        Finally
+            con.Close()
+        End Try
+    End Function
+
+    Public Function EncontrarUsuarioPorCodigo(codigo As String) As Usuario
+        Try
+            Dim listUser As List(Of Usuario)
+            listUser = New List(Of Usuario)
+
+            conectar()
+
+            cmd = New SqlCommand("sp_usuario_encontrar_por_codigo @codigo")
+            cmd.Parameters.AddWithValue("@codigo", codigo)
+
+            cmd.Connection = con
+
+            dr = cmd.ExecuteReader
+
+            If dr.HasRows Then
+                While dr.Read
+                    listUser.Add(New Usuario(
+                            dr.Item("i_id_usuario"),
+                            dr.Item("v_username_usuario"),
+                            dr.Item("v_password_usuario"),
+                            dr.Item("i_id_empleado"),
+                            dr.Item("v_nombre_persona"),
+                            dr.Item("v_apellido_paterno_persona"),
+                            dr.Item("i_id_rol"),
+                            dr.Item("v_nombre_rol")
+                            ))
+                End While
+
+                Return listUser.Item(0)
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message & " Usuario")
             Return Nothing
         Finally
             con.Close()
@@ -218,6 +341,7 @@ Public Class Usuario
                             dr.Item("v_password_usuario"),
                             dr.Item("i_id_empleado"),
                             dr.Item("v_nombre_persona"),
+                            dr.Item("v_apellido_paterno_persona"),
                             dr.Item("i_id_rol"),
                             dr.Item("v_nombre_rol")
                             ))

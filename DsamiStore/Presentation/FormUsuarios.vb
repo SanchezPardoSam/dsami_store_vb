@@ -40,6 +40,22 @@
     Private Sub FormUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cargardatos()
     End Sub
+
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        Dim form As New FormInsertarUsuarios(Me)
+        form.Show()
+    End Sub
+
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        Dim form As New FormEditarUsuarios(Me)
+        form.Show()
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Dim form As New FormEliminarUsuarios(Me)
+        form.Show()
+    End Sub
+
     Public Sub Cargardatos()
         Try
             dgvUsuarios.Rows.Clear()
@@ -65,7 +81,7 @@
             Dim i As Integer = 1
 
             For x = 0 To usuarios.Count - 1 Step 1
-                dgvUsuarios.Rows.Add((x + 1).ToString(), usuarios(x).NombreEmpleado, usuarios(x).Nombre_Usuario, usuarios(x).NombreRol)
+                dgvUsuarios.Rows.Add(usuarios(x).Codigo_Usuario, usuarios(x).Nombre_Usuario, usuarios(x).NombreEmpleado & " " & usuarios(x).ApellidoEmpleado, usuarios(x).NombreRol)
             Next
 
         Catch ex As Exception
@@ -98,9 +114,8 @@
         Cargardatos()
     End Sub
 
-    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
-        FormEditarUsuarios.Show()
-        FormInsertarUsuarios.Show()
-        FormEliminarUsuarios.Show()
+    Private Sub dgvUsuarios_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUsuarios.CellClick
+        btnEditar.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(94, Byte), Integer))
+        btnEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer))
     End Sub
 End Class

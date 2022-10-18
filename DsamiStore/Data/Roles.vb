@@ -119,7 +119,7 @@ Public Class Roles
             If dr.HasRows Then
                 While dr.Read
                     i += 1
-                    listRol.Add(New Roles(i.ToString, dr.Item("v_nombre_rol")))
+                    listRol.Add(New Roles(dr.Item("i_id_rol"), dr.Item("v_nombre_rol")))
                 End While
 
                 Return listRol
