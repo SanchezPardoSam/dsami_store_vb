@@ -38,8 +38,6 @@ Partial Class FormRoles
         Me.dgvRoles = New System.Windows.Forms.DataGridView()
         Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.editar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvRoles, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,6 +45,7 @@ Partial Class FormRoles
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnEliminar)
         Me.Panel1.Controls.Add(Me.btnEditar)
         Me.Panel1.Controls.Add(Me.tbBuscar)
@@ -63,8 +62,8 @@ Partial Class FormRoles
         'btnEliminar
         '
         Me.btnEliminar.BackColor = System.Drawing.Color.Gray
-        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar.ForeColor = System.Drawing.Color.White
         Me.btnEliminar.Location = New System.Drawing.Point(441, 61)
         Me.btnEliminar.Margin = New System.Windows.Forms.Padding(2)
@@ -77,8 +76,8 @@ Partial Class FormRoles
         'btnEditar
         '
         Me.btnEditar.BackColor = System.Drawing.Color.Gray
-        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEditar.ForeColor = System.Drawing.Color.White
         Me.btnEditar.Location = New System.Drawing.Point(338, 61)
         Me.btnEditar.Margin = New System.Windows.Forms.Padding(2)
@@ -99,7 +98,8 @@ Partial Class FormRoles
         'btnBuscar
         '
         Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscar.ForeColor = System.Drawing.Color.White
         Me.btnBuscar.Location = New System.Drawing.Point(716, 61)
         Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2)
@@ -112,8 +112,8 @@ Partial Class FormRoles
         'btnAgregar
         '
         Me.btnAgregar.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.ForeColor = System.Drawing.Color.White
         Me.btnAgregar.Location = New System.Drawing.Point(14, 61)
         Me.btnAgregar.Margin = New System.Windows.Forms.Padding(2)
@@ -126,7 +126,7 @@ Partial Class FormRoles
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Bookman Old Style", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Black", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(94, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(9, 15)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
@@ -137,6 +137,7 @@ Partial Class FormRoles
         '
         'Panel2
         '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Panel2.Controls.Add(Me.btnSiguiente)
         Me.Panel2.Controls.Add(Me.btnAnterior)
         Me.Panel2.Controls.Add(Me.Label3)
@@ -196,8 +197,9 @@ Partial Class FormRoles
         '
         'dgvRoles
         '
+        Me.dgvRoles.BackgroundColor = System.Drawing.Color.White
         Me.dgvRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvRoles.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre, Me.editar, Me.eliminar})
+        Me.dgvRoles.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre})
         Me.dgvRoles.Location = New System.Drawing.Point(14, 19)
         Me.dgvRoles.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvRoles.Name = "dgvRoles"
@@ -219,22 +221,6 @@ Partial Class FormRoles
         Me.nombre.MinimumWidth = 6
         Me.nombre.Name = "nombre"
         Me.nombre.Width = 125
-        '
-        'editar
-        '
-        Me.editar.HeaderText = "Edicion"
-        Me.editar.MinimumWidth = 6
-        Me.editar.Name = "editar"
-        Me.editar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.editar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.editar.Width = 125
-        '
-        'eliminar
-        '
-        Me.eliminar.HeaderText = "Eliminar"
-        Me.eliminar.MinimumWidth = 6
-        Me.eliminar.Name = "eliminar"
-        Me.eliminar.Width = 125
         '
         'FormRoles
         '
@@ -262,10 +248,6 @@ Partial Class FormRoles
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents dgvRoles As DataGridView
-    Friend WithEvents codigo As DataGridViewTextBoxColumn
-    Friend WithEvents nombre As DataGridViewTextBoxColumn
-    Friend WithEvents editar As DataGridViewButtonColumn
-    Friend WithEvents eliminar As DataGridViewButtonColumn
     Friend WithEvents btnSiguiente As Button
     Friend WithEvents btnAnterior As Button
     Friend WithEvents Label3 As Label
@@ -273,4 +255,6 @@ Partial Class FormRoles
     Friend WithEvents tbPagina As TextBox
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnEditar As Button
+    Friend WithEvents codigo As DataGridViewTextBoxColumn
+    Friend WithEvents nombre As DataGridViewTextBoxColumn
 End Class

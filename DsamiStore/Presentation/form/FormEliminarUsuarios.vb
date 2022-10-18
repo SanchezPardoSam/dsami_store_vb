@@ -14,7 +14,7 @@
         txtNombreEliminarUsuario.Text = nombre
     End Sub
 
-    Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptarEliminarUsuarios.Click
+    Public Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptarEliminarUsuarios.Click
         Try
             Dim codigo As String = padre.dgvUsuarios.CurrentRow.Cells.Item(0).Value
 

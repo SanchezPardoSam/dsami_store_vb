@@ -32,14 +32,14 @@ Partial Class FormUsuarios
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
-        Me.btnAnterior = New System.Windows.Forms.Button()
-        Me.cbLimite = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.tbPagina = New System.Windows.Forms.TextBox()
         Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.email = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.rol = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnAnterior = New System.Windows.Forms.Button()
+        Me.cbLimite = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.tbPagina = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,6 +47,7 @@ Partial Class FormUsuarios
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Panel1.Controls.Add(Me.btnEliminar)
         Me.Panel1.Controls.Add(Me.btnEditar)
         Me.Panel1.Controls.Add(Me.tbBuscar)
@@ -63,8 +64,8 @@ Partial Class FormUsuarios
         'btnEliminar
         '
         Me.btnEliminar.BackColor = System.Drawing.Color.Gray
-        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar.ForeColor = System.Drawing.Color.White
         Me.btnEliminar.Location = New System.Drawing.Point(443, 61)
         Me.btnEliminar.Margin = New System.Windows.Forms.Padding(2)
@@ -77,8 +78,8 @@ Partial Class FormUsuarios
         'btnEditar
         '
         Me.btnEditar.BackColor = System.Drawing.Color.Gray
-        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEditar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEditar.ForeColor = System.Drawing.Color.White
         Me.btnEditar.Location = New System.Drawing.Point(340, 61)
         Me.btnEditar.Margin = New System.Windows.Forms.Padding(2)
@@ -99,7 +100,8 @@ Partial Class FormUsuarios
         'btnBuscar
         '
         Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscar.ForeColor = System.Drawing.Color.White
         Me.btnBuscar.Location = New System.Drawing.Point(716, 61)
         Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2)
@@ -112,8 +114,8 @@ Partial Class FormUsuarios
         'btnAgregar
         '
         Me.btnAgregar.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.ForeColor = System.Drawing.Color.White
         Me.btnAgregar.Location = New System.Drawing.Point(14, 61)
         Me.btnAgregar.Margin = New System.Windows.Forms.Padding(2)
@@ -126,17 +128,18 @@ Partial Class FormUsuarios
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Bookman Old Style", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Black", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Label1.Location = New System.Drawing.Point(9, 15)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(135, 32)
+        Me.Label1.Size = New System.Drawing.Size(102, 30)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Usuarios"
         '
         'Panel2
         '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Panel2.Controls.Add(Me.btnSiguiente)
         Me.Panel2.Controls.Add(Me.dgvUsuarios)
         Me.Panel2.Controls.Add(Me.btnAnterior)
@@ -161,6 +164,7 @@ Partial Class FormUsuarios
         '
         'dgvUsuarios
         '
+        Me.dgvUsuarios.BackgroundColor = System.Drawing.Color.White
         Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvUsuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre, Me.email, Me.rol})
         Me.dgvUsuarios.Location = New System.Drawing.Point(14, 19)
@@ -170,6 +174,34 @@ Partial Class FormUsuarios
         Me.dgvUsuarios.RowTemplate.Height = 24
         Me.dgvUsuarios.Size = New System.Drawing.Size(788, 232)
         Me.dgvUsuarios.TabIndex = 0
+        '
+        'codigo
+        '
+        Me.codigo.HeaderText = "Codigo"
+        Me.codigo.MinimumWidth = 6
+        Me.codigo.Name = "codigo"
+        Me.codigo.Width = 125
+        '
+        'nombre
+        '
+        Me.nombre.HeaderText = "Nombre de usuario"
+        Me.nombre.MinimumWidth = 6
+        Me.nombre.Name = "nombre"
+        Me.nombre.Width = 125
+        '
+        'email
+        '
+        Me.email.HeaderText = "Empleado"
+        Me.email.MinimumWidth = 6
+        Me.email.Name = "email"
+        Me.email.Width = 125
+        '
+        'rol
+        '
+        Me.rol.HeaderText = "Rol"
+        Me.rol.MinimumWidth = 6
+        Me.rol.Name = "rol"
+        Me.rol.Width = 125
         '
         'btnAnterior
         '
@@ -205,34 +237,6 @@ Partial Class FormUsuarios
         Me.tbPagina.Name = "tbPagina"
         Me.tbPagina.Size = New System.Drawing.Size(30, 20)
         Me.tbPagina.TabIndex = 18
-        '
-        'codigo
-        '
-        Me.codigo.HeaderText = "Codigo"
-        Me.codigo.MinimumWidth = 6
-        Me.codigo.Name = "codigo"
-        Me.codigo.Width = 125
-        '
-        'nombre
-        '
-        Me.nombre.HeaderText = "Nombre de usuario"
-        Me.nombre.MinimumWidth = 6
-        Me.nombre.Name = "nombre"
-        Me.nombre.Width = 125
-        '
-        'email
-        '
-        Me.email.HeaderText = "Empleado"
-        Me.email.MinimumWidth = 6
-        Me.email.Name = "email"
-        Me.email.Width = 125
-        '
-        'rol
-        '
-        Me.rol.HeaderText = "Rol"
-        Me.rol.MinimumWidth = 6
-        Me.rol.Name = "rol"
-        Me.rol.Width = 125
         '
         'FormUsuarios
         '

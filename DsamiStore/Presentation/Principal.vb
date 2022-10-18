@@ -37,7 +37,7 @@ Public Class Principal
 	End Sub
 	Public Sub buttonDesactive()
 		If Button IsNot Nothing Then
-			Button.BackColor = Color.FromArgb(248, 249, 250)
+			Button.BackColor = Color.FromArgb(241, 245, 249)
 			Button.ForeColor = Color.Black
 			Button.IconColor = Color.Green
 			Button.TextAlign = ContentAlignment.MiddleCenter
@@ -99,6 +99,14 @@ Public Class Principal
 	End Sub
 
 	Private Sub Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+	End Sub
+
+	Private Sub PanelMenu_Paint(sender As Object, e As PaintEventArgs) Handles PanelMenu.Paint
+
+	End Sub
+
+	Private Sub panelSecciones_Paint(sender As Object, e As PaintEventArgs) Handles panelSecciones.Paint
 
 	End Sub
 End Class
