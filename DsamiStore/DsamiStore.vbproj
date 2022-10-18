@@ -178,6 +178,12 @@
     <Compile Include="Presentation\form\FormEditarCategoria.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentation\form\FormEditarEmpleado.Designer.vb">
+      <DependentUpon>FormEditarEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\form\FormEditarEmpleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentation\form\FormEditarProducto.Designer.vb">
       <DependentUpon>FormEditarProducto.vb</DependentUpon>
     </Compile>
@@ -208,6 +214,12 @@
     <Compile Include="Presentation\form\FormEliminarCategorias.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentation\form\FormEliminarEmpleado.Designer.vb">
+      <DependentUpon>FormEliminarEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\form\FormEliminarEmpleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentation\form\FormEliminarProducto.Designer.vb">
       <DependentUpon>FormEliminarProducto.vb</DependentUpon>
     </Compile>
@@ -236,6 +248,12 @@
       <DependentUpon>FormInsertarCategorias.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentation\form\FormInsertarCategorias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\form\FormInsertarEmpleado.Designer.vb">
+      <DependentUpon>FormInsertarEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\form\FormInsertarEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation\form\FormInsertarProducto.Designer.vb">
@@ -300,6 +318,9 @@
     <EmbeddedResource Include="Presentation\form\FormEditarCategoria.resx">
       <DependentUpon>FormEditarCategoria.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\form\FormEditarEmpleado.resx">
+      <DependentUpon>FormEditarEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\form\FormEditarProducto.resx">
       <DependentUpon>FormEditarProducto.vb</DependentUpon>
     </EmbeddedResource>
@@ -315,6 +336,9 @@
     <EmbeddedResource Include="Presentation\form\FormEliminarCategorias.resx">
       <DependentUpon>FormEliminarCategorias.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\form\FormEliminarEmpleado.resx">
+      <DependentUpon>FormEliminarEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\form\FormEliminarProducto.resx">
       <DependentUpon>FormEliminarProducto.vb</DependentUpon>
     </EmbeddedResource>
@@ -329,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\form\FormInsertarCategorias.resx">
       <DependentUpon>FormInsertarCategorias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\form\FormInsertarEmpleado.resx">
+      <DependentUpon>FormInsertarEmpleado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\form\FormInsertarProducto.resx">
       <DependentUpon>FormInsertarProducto.vb</DependentUpon>
