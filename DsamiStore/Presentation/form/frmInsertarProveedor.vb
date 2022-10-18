@@ -87,14 +87,23 @@
             ObtenerRegiones(paises.Item(0).Id)
         End If
 
+        cbxPais.Text = "Selecionar pais"
+        cbxPais.SelectedIndex = -1
 
-        ' cbxPais.SelectedIndex = -1
-        ' cbxTipoDocumento.Text = "Selecionar documento"
-        ' cbxEmpresa.Text = "Selecionar pais"
-        ' cbxRegion.Text = "Selecionar region"
-        ' cbxProvincia.Text = "Selecionar provincia"
-        ' cbxDistrito.Text = "Selecionar distrito"
+        cbxTipoDocumento.Text = "Selecionar documento"
+        cbxTipoDocumento.SelectedIndex = -1
 
+        cbxRegion.Text = "Selecionar region"
+        cbxRegion.SelectedIndex = -1
+
+        cbxProvincia.Text = "Selecionar provincia"
+        cbxProvincia.SelectedIndex = -1
+
+        cbxDistrito.Text = "Selecionar distrito"
+        cbxDistrito.SelectedIndex = -1
+
+        cbxEmpresa.Text = "Selecionar Empresa"
+        cbxEmpresa.SelectedIndex = -1
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
@@ -109,7 +118,7 @@
 
         If paises.Count = 0 Then
         Else
-            cbxPais.SelectedIndex = 0
+            'cbxPais.SelectedIndex = 0
 
             ObtenerRegiones(paises.Item(0).Id)
         End If
@@ -123,7 +132,7 @@
 
         If regiones.Count = 0 Then
         Else
-            cbxRegion.SelectedIndex = 0
+            'cbxRegion.SelectedIndex = 0
 
             ObtenerProvincias(regiones.Item(0).Id_Region)
         End If
@@ -137,7 +146,7 @@
 
         If provincias.Count = 0 Then
         Else
-            cbxProvincia.SelectedIndex = 0
+            'cbxProvincia.SelectedIndex = 0
 
             ObtenerDistritos(provincias.Item(0).Id_Provincia)
         End If
@@ -152,7 +161,7 @@
 
         If distritos.Count = 0 Then
         Else
-            cbxDistrito.SelectedIndex = 0
+            'cbxDistrito.SelectedIndex = 0
         End If
     End Sub
 

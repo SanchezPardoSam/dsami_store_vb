@@ -40,17 +40,19 @@ Partial Class FormEliminarRol
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(416, 48)
+        Me.Panel1.Size = New System.Drawing.Size(555, 59)
         Me.Panel1.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 15)
+        Me.Label1.Location = New System.Drawing.Point(16, 18)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(184, 17)
+        Me.Label1.Size = New System.Drawing.Size(226, 22)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "¿Deseas eliminar el rol?"
         '
@@ -60,9 +62,10 @@ Partial Class FormEliminarRol
         Me.Panel2.Controls.Add(Me.btnCancelarEliminarRol)
         Me.Panel2.Controls.Add(Me.btnAceptarEliminarRol)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 91)
+        Me.Panel2.Location = New System.Drawing.Point(0, 112)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(416, 60)
+        Me.Panel2.Size = New System.Drawing.Size(555, 74)
         Me.Panel2.TabIndex = 1
         '
         'btnCancelarEliminarRol
@@ -72,10 +75,10 @@ Partial Class FormEliminarRol
         Me.btnCancelarEliminarRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelarEliminarRol.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelarEliminarRol.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(85, Byte), Integer))
-        Me.btnCancelarEliminarRol.Location = New System.Drawing.Point(198, 10)
-        Me.btnCancelarEliminarRol.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCancelarEliminarRol.Location = New System.Drawing.Point(264, 12)
+        Me.btnCancelarEliminarRol.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnCancelarEliminarRol.Name = "btnCancelarEliminarRol"
-        Me.btnCancelarEliminarRol.Size = New System.Drawing.Size(87, 30)
+        Me.btnCancelarEliminarRol.Size = New System.Drawing.Size(116, 37)
         Me.btnCancelarEliminarRol.TabIndex = 7
         Me.btnCancelarEliminarRol.Text = "Cancelar"
         Me.btnCancelarEliminarRol.UseVisualStyleBackColor = False
@@ -87,10 +90,10 @@ Partial Class FormEliminarRol
         Me.btnAceptarEliminarRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAceptarEliminarRol.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAceptarEliminarRol.ForeColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.btnAceptarEliminarRol.Location = New System.Drawing.Point(304, 10)
-        Me.btnAceptarEliminarRol.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnAceptarEliminarRol.Location = New System.Drawing.Point(405, 12)
+        Me.btnAceptarEliminarRol.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnAceptarEliminarRol.Name = "btnAceptarEliminarRol"
-        Me.btnAceptarEliminarRol.Size = New System.Drawing.Size(87, 30)
+        Me.btnAceptarEliminarRol.Size = New System.Drawing.Size(116, 37)
         Me.btnAceptarEliminarRol.TabIndex = 6
         Me.btnAceptarEliminarRol.Text = "Aceptar"
         Me.btnAceptarEliminarRol.UseVisualStyleBackColor = False
@@ -101,29 +104,32 @@ Partial Class FormEliminarRol
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel3.Controls.Add(Me.txtNombreEliminarRol)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(0, 48)
+        Me.Panel3.Location = New System.Drawing.Point(0, 59)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(416, 43)
+        Me.Panel3.Size = New System.Drawing.Size(555, 53)
         Me.Panel3.TabIndex = 2
         '
         'txtNombreEliminarRol
         '
         Me.txtNombreEliminarRol.AutoSize = True
         Me.txtNombreEliminarRol.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombreEliminarRol.Location = New System.Drawing.Point(23, 13)
+        Me.txtNombreEliminarRol.Location = New System.Drawing.Point(31, 16)
+        Me.txtNombreEliminarRol.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.txtNombreEliminarRol.Name = "txtNombreEliminarRol"
-        Me.txtNombreEliminarRol.Size = New System.Drawing.Size(56, 16)
+        Me.txtNombreEliminarRol.Size = New System.Drawing.Size(65, 20)
         Me.txtNombreEliminarRol.TabIndex = 2
         Me.txtNombreEliminarRol.Text = "Nombre"
         '
         'FormEliminarRol
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(416, 151)
+        Me.ClientSize = New System.Drawing.Size(555, 186)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "FormEliminarRol"
         Me.Text = "FormEliminarRol"
         Me.Panel1.ResumeLayout(False)
