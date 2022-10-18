@@ -1,6 +1,34 @@
 ﻿Public Class BLCategoria
     Private _categoriaDato As Categoria = New Categoria()
 
+    Public Function InsertarCategoria(codigo As String, nombre As String, descripcion As String)
+        Dim categoria As New Categoria(codigo, nombre, descripcion)
+
+        If _categoriaDato.InsertarCategoria(categoria) = True Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Public Function ActualizarCategoria(codigo As String, nombre As String, descripcion As String)
+        Dim categoria As New Categoria(codigo, nombre, descripcion)
+
+        If _categoriaDato.ActualizarCategoria(categoria) = True Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Public Function EliminarCategoria(codigo As String)
+        If _categoriaDato.EliminarCategoria(codigo) = True Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
     Public Function ConsultarCategoria() As List(Of Categoria)
 
         Try

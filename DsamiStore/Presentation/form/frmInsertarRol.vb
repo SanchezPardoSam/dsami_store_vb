@@ -19,10 +19,12 @@
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
             Dim blRol As New BLRol
+
             blRol.InsertarRol("R001", tbNombre.Text)
-            padre.cargardatos()
+
+            padre.Cargardatos()
+
             Me.Close()
-            blRol.ConsultarRoles()
         Catch ex As Exception
             MsgBox(ex.Message & "/insertar")
         End Try

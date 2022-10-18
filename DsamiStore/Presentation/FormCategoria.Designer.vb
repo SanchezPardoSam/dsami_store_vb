@@ -39,6 +39,8 @@ Partial Class FormCategoria
         Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Editar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnEditar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvCategorias, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,6 +60,8 @@ Partial Class FormCategoria
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.btnEliminar)
+        Me.Panel1.Controls.Add(Me.btnEditar)
         Me.Panel1.Controls.Add(Me.tbBuscar)
         Me.Panel1.Controls.Add(Me.btnBuscar)
         Me.Panel1.Controls.Add(Me.btnAgregar)
@@ -211,6 +215,34 @@ Partial Class FormCategoria
         Me.Eliminar.Name = "Eliminar"
         Me.Eliminar.Width = 125
         '
+        'btnEliminar
+        '
+        Me.btnEliminar.BackColor = System.Drawing.Color.Gray
+        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.ForeColor = System.Drawing.Color.White
+        Me.btnEliminar.Location = New System.Drawing.Point(413, 61)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(87, 30)
+        Me.btnEliminar.TabIndex = 8
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = False
+        '
+        'btnEditar
+        '
+        Me.btnEditar.BackColor = System.Drawing.Color.Gray
+        Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditar.ForeColor = System.Drawing.Color.White
+        Me.btnEditar.Location = New System.Drawing.Point(310, 61)
+        Me.btnEditar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(87, 30)
+        Me.btnEditar.TabIndex = 7
+        Me.btnEditar.Text = "Editar"
+        Me.btnEditar.UseVisualStyleBackColor = False
+        '
         'FormCategoria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -247,4 +279,6 @@ Partial Class FormCategoria
     Friend WithEvents Label3 As Label
     Friend WithEvents cbLimite As ComboBox
     Friend WithEvents tbPagina As TextBox
+    Friend WithEvents btnEliminar As Button
+    Friend WithEvents btnEditar As Button
 End Class

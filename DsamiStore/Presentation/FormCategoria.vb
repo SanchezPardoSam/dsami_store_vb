@@ -3,7 +3,7 @@
     Private _consulta As String = ""
     Private _pagina As Integer = 1
     Private _totalPagina As Integer = 1
-    Private _limite As Integer = 5
+    Private _limite As Integer = 10
     Private _dtLimite As New DataTable()
 
     Public Sub New()
@@ -100,8 +100,22 @@
     End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
-        FormInsertarCategorias.Show()
-        FormEditarCategoria.Show()
-        FormEliminarCategorias.Show()
+        Dim form As New FormInsertarCategorias(Me)
+        form.Show()
+    End Sub
+
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        Dim form As New FormEditarCategoria(Me)
+        form.Show()
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Dim form As New FormEliminarCategorias(Me)
+        form.Show()
+    End Sub
+
+    Private Sub dgvRoles_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCategorias.CellClick
+        btnEditar.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(94, Byte), Integer))
+        btnEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer))
     End Sub
 End Class

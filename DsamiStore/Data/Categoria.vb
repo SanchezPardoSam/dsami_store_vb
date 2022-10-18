@@ -45,6 +45,72 @@ Public Class Categoria
         End Set
     End Property
 
+    Public Function InsertarCategoria(categoria As Categoria)
+        Try
+            conectar()
+
+            Dim sql As String = "sp_categoria_crear @nombre, @descripcion"
+            cmd = New SqlCommand(sql, con)
+            cmd.Parameters.AddWithValue("@nombre", categoria.Nombre)
+            cmd.Parameters.AddWithValue("@descripcion", categoria.Descripcion)
+
+            If cmd.ExecuteNonQuery() Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message & "/categoria")
+        Finally
+            desconectar()
+        End Try
+    End Function
+
+    Public Function ActualizarCategoria(categoria As Categoria)
+        Try
+            conectar()
+
+            Dim sql As String = "sp_categoria_actualizar @codigo, @nombre, @descripcion"
+            cmd = New SqlCommand(sql, con)
+            cmd.Parameters.AddWithValue("@codigo", categoria.Id)
+            cmd.Parameters.AddWithValue("@nombre", categoria.Nombre)
+            cmd.Parameters.AddWithValue("@descripcion", categoria.Descripcion)
+
+            If cmd.ExecuteNonQuery() Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message & "/rol")
+        Finally
+            desconectar()
+        End Try
+    End Function
+
+    Public Function EliminarCategoria(codigo As String)
+        Try
+            conectar()
+
+            Dim sql As String = "sp_categoria_eliminar @codigo"
+            cmd = New SqlCommand(sql, con)
+            cmd.Parameters.AddWithValue("@codigo", codigo)
+
+            If cmd.ExecuteNonQuery() Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message & "/categoria")
+        Finally
+            desconectar()
+        End Try
+    End Function
+
     Public Function ConsultarCategoria() As List(Of Categoria)
         Try
             Dim listCat As List(Of Categoria)
@@ -60,7 +126,7 @@ Public Class Categoria
             If dr.HasRows Then
                 While dr.Read
                     i += 1
-                    listCat.Add(New Categoria(i.ToString, dr.Item("v_nombre_categoria"),
+                    listCat.Add(New Categoria(dr.Item("i_id_categoria"), dr.Item("v_nombre_categoria"),
                                           dr.Item("v_descripcion_categoria")))
                 End While
 
@@ -118,7 +184,7 @@ Public Class Categoria
             If dr.HasRows Then
                 While dr.Read
                     i += 1
-                    categorias.Add(New Categoria(i.ToString, dr.Item("v_nombre_categoria"),
+                    categorias.Add(New Categoria(dr.Item("i_id_categoria"), dr.Item("v_nombre_categoria"),
                                           dr.Item("v_descripcion_categoria")))
                 End While
 
