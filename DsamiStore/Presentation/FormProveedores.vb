@@ -25,6 +25,7 @@
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Dim frmInsertarProveedor As New frmInsertarProveedor(Me)
         frmInsertarProveedor.Show()
+
     End Sub
 
     Private Sub dgvProveedores_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProveedores.CellClick

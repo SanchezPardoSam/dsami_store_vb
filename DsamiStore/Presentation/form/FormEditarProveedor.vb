@@ -56,14 +56,14 @@
             End If
         Next
 
-        Dim empresas = _empresaNegocio.ConsultarEmpresa()
+        'Dim empresas = _empresaNegocio.ConsultarEmpresa()
 
-        For x = 0 To empresas.Count - 1 Step 1
-            _dtProveedor.Rows.Add(empresas(x).Id, empresas(x).RazonSocial)
-            If empresas(x).RazonSocial = _prov.Empresa Then
-                cbxEmpresa.SelectedIndex = x
-            End If
-        Next
+        'For x = 0 To empresas.Count - 1 Step 1
+        '_dtProveedor.Rows.Add(empresas(x).Id, empresas(x).RazonSocial)
+        'If empresas(x).RazonSocial = _prov.Empresa Then
+        'cbxEmpresa.SelectedIndex = x
+        'End If
+        'Next
 
     End Sub
 End Class

@@ -28,6 +28,11 @@ Partial Class FormEmpleados
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnSiguiente = New System.Windows.Forms.Button()
+        Me.btnAnterior = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cbLimite = New System.Windows.Forms.ComboBox()
+        Me.tbPagina = New System.Windows.Forms.TextBox()
         Me.dgvEmpleados = New System.Windows.Forms.DataGridView()
         Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -37,11 +42,6 @@ Partial Class FormEmpleados
         Me.direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.editar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.eliminar = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnSiguiente = New System.Windows.Forms.Button()
-        Me.btnAnterior = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.cbLimite = New System.Windows.Forms.ComboBox()
-        Me.tbPagina = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,7 +55,7 @@ Partial Class FormEmpleados
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(812, 106)
         Me.Panel1.TabIndex = 3
@@ -63,7 +63,7 @@ Partial Class FormEmpleados
         'tbBuscar
         '
         Me.tbBuscar.Location = New System.Drawing.Point(544, 67)
-        Me.tbBuscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tbBuscar.Margin = New System.Windows.Forms.Padding(2)
         Me.tbBuscar.Name = "tbBuscar"
         Me.tbBuscar.Size = New System.Drawing.Size(168, 20)
         Me.tbBuscar.TabIndex = 4
@@ -75,7 +75,7 @@ Partial Class FormEmpleados
         Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscar.ForeColor = System.Drawing.Color.White
         Me.btnBuscar.Location = New System.Drawing.Point(716, 61)
-        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(87, 30)
         Me.btnBuscar.TabIndex = 3
@@ -89,7 +89,7 @@ Partial Class FormEmpleados
         Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.ForeColor = System.Drawing.Color.White
         Me.btnAgregar.Location = New System.Drawing.Point(14, 61)
-        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(87, 30)
         Me.btnAgregar.TabIndex = 2
@@ -118,17 +118,61 @@ Partial Class FormEmpleados
         Me.Panel2.Controls.Add(Me.dgvEmpleados)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 106)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(812, 303)
         Me.Panel2.TabIndex = 5
+        '
+        'btnSiguiente
+        '
+        Me.btnSiguiente.Location = New System.Drawing.Point(81, 267)
+        Me.btnSiguiente.Name = "btnSiguiente"
+        Me.btnSiguiente.Size = New System.Drawing.Size(21, 23)
+        Me.btnSiguiente.TabIndex = 27
+        Me.btnSiguiente.Text = ">"
+        Me.btnSiguiente.UseVisualStyleBackColor = True
+        '
+        'btnAnterior
+        '
+        Me.btnAnterior.Location = New System.Drawing.Point(16, 268)
+        Me.btnAnterior.Name = "btnAnterior"
+        Me.btnAnterior.Size = New System.Drawing.Size(21, 23)
+        Me.btnAnterior.TabIndex = 26
+        Me.btnAnterior.Text = "<"
+        Me.btnAnterior.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(614, 273)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(36, 13)
+        Me.Label3.TabIndex = 25
+        Me.Label3.Text = "Límite"
+        '
+        'cbLimite
+        '
+        Me.cbLimite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbLimite.FormattingEnabled = True
+        Me.cbLimite.Location = New System.Drawing.Point(669, 270)
+        Me.cbLimite.Name = "cbLimite"
+        Me.cbLimite.Size = New System.Drawing.Size(121, 21)
+        Me.cbLimite.TabIndex = 24
+        '
+        'tbPagina
+        '
+        Me.tbPagina.Enabled = False
+        Me.tbPagina.Location = New System.Drawing.Point(43, 270)
+        Me.tbPagina.Name = "tbPagina"
+        Me.tbPagina.Size = New System.Drawing.Size(30, 20)
+        Me.tbPagina.TabIndex = 23
         '
         'dgvEmpleados
         '
         Me.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvEmpleados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre, Me.apellidoM, Me.apellidoP, Me.telefono, Me.direccion, Me.editar, Me.eliminar})
         Me.dgvEmpleados.Location = New System.Drawing.Point(14, 19)
-        Me.dgvEmpleados.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgvEmpleados.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvEmpleados.Name = "dgvEmpleados"
         Me.dgvEmpleados.RowHeadersWidth = 51
         Me.dgvEmpleados.RowTemplate.Height = 24
@@ -191,50 +235,6 @@ Partial Class FormEmpleados
         Me.eliminar.Name = "eliminar"
         Me.eliminar.Width = 125
         '
-        'btnSiguiente
-        '
-        Me.btnSiguiente.Location = New System.Drawing.Point(81, 267)
-        Me.btnSiguiente.Name = "btnSiguiente"
-        Me.btnSiguiente.Size = New System.Drawing.Size(21, 23)
-        Me.btnSiguiente.TabIndex = 27
-        Me.btnSiguiente.Text = ">"
-        Me.btnSiguiente.UseVisualStyleBackColor = True
-        '
-        'btnAnterior
-        '
-        Me.btnAnterior.Location = New System.Drawing.Point(16, 268)
-        Me.btnAnterior.Name = "btnAnterior"
-        Me.btnAnterior.Size = New System.Drawing.Size(21, 23)
-        Me.btnAnterior.TabIndex = 26
-        Me.btnAnterior.Text = "<"
-        Me.btnAnterior.UseVisualStyleBackColor = True
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(614, 273)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(36, 13)
-        Me.Label3.TabIndex = 25
-        Me.Label3.Text = "Límite"
-        '
-        'cbLimite
-        '
-        Me.cbLimite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbLimite.FormattingEnabled = True
-        Me.cbLimite.Location = New System.Drawing.Point(669, 270)
-        Me.cbLimite.Name = "cbLimite"
-        Me.cbLimite.Size = New System.Drawing.Size(121, 21)
-        Me.cbLimite.TabIndex = 24
-        '
-        'tbPagina
-        '
-        Me.tbPagina.Enabled = False
-        Me.tbPagina.Location = New System.Drawing.Point(43, 270)
-        Me.tbPagina.Name = "tbPagina"
-        Me.tbPagina.Size = New System.Drawing.Size(30, 20)
-        Me.tbPagina.TabIndex = 23
-        '
         'FormEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -242,7 +242,7 @@ Partial Class FormEmpleados
         Me.ClientSize = New System.Drawing.Size(812, 409)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FormEmpleados"
         Me.Text = "FormEmpleados"
         Me.Panel1.ResumeLayout(False)

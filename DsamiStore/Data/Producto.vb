@@ -233,4 +233,25 @@ Public Class Producto
             con.Close()
         End Try
     End Function
+    Public Function EliminarProducto(id) As Boolean
+        Try
+            conectar()
+
+            cmd = New SqlCommand("sp_producto_eliminar @in_i_id_producto")
+            cmd.Parameters.AddWithValue("@in_i_id_producto", id)
+            cmd.Connection = con
+            dr = cmd.ExecuteReader
+            If dr.HasRows Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message & " PRODUCTO")
+            Return Nothing
+        Finally
+            con.Close()
+        End Try
+    End Function
 End Class

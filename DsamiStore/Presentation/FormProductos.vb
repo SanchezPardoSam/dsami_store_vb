@@ -77,7 +77,15 @@
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         FormInsertarProducto.Show()
+
+    End Sub
+
+    Private Sub ButtonDelete_Click(sender As Object, e As EventArgs) Handles ButtonDelete.Click
+        Dim form As New FormEliminarProducto(Me)
+        form.Show()
+    End Sub
+
+    Private Sub ButtonEdit_Click(sender As Object, e As EventArgs) Handles ButtonEdit.Click
         FormEditarProducto.Show()
-        FormEliminarProducto.Show()
     End Sub
 End Class

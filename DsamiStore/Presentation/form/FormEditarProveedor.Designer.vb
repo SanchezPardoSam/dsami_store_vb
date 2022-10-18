@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormEditarProveedor
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FormEditarProveedor
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.cbxDistrito = New System.Windows.Forms.ComboBox()
         Me.cbxProvincia = New System.Windows.Forms.ComboBox()
@@ -343,6 +343,7 @@ Partial Class FormEditarProveedor
         Me.Controls.Add(Me.Label1)
         Me.Name = "FormEditarProveedor"
         Me.Text = "FormEditarProveedor"
+
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -375,4 +376,28 @@ Partial Class FormEditarProveedor
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+
+    Friend WithEvents cbxDistritoEditarProveedor As ComboBox
+
+    Friend WithEvents cbxProvinciaEditarProveedor As ComboBox
+
+    Friend WithEvents cbxPaisEditarProveedor As ComboBox
+
+    Friend WithEvents cbxRegionEditarProveedor As ComboBox
+
+    Friend WithEvents cbxEmpresaEditarProveedor As ComboBox
+
+    Friend WithEvents cbxTipoDocumentoEditarProv As ComboBox
+
+    Friend WithEvents dtpNacimientoEditarProveedor As DateTimePicker
+
+    Friend WithEvents txtDireccionEditarProveedor As TextBox
+
+    Friend WithEvents txtApellidoMaternoEditarProv As TextBox
+
+    Friend WithEvents txtDocumentoEditarProveedor As TextBox
+    Friend WithEvents txtNameEditarProveedor As TextBox
+    Friend WithEvents txtApellidoPaternoEditarProv As TextBox
+    Friend WithEvents btnAgregarEditarProveedor As Button
+    Friend WithEvents btnCancelarEditarProveedor As Button
 End Class

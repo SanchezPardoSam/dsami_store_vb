@@ -7,7 +7,6 @@ Public Class FormRoles
     Private _totalPagina As Integer = 1
     Private _limite As Integer = 10
     Private _dtLimite As New DataTable()
-    Public selecionadoIndex As Integer
 
     Public Sub New()
 
@@ -121,7 +120,6 @@ Public Class FormRoles
     End Sub
 
     Private Sub dgvRoles_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvRoles.CellClick
-        selecionadoIndex = e.RowIndex
         btnEditar.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(94, Byte), Integer))
         btnEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer))
     End Sub
