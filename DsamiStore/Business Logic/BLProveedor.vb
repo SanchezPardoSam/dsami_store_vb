@@ -45,4 +45,26 @@
             Return False
         End If
     End Function
+
+    Public Function ObtenerProveedoresCantidad(consulta As String, limite As Integer) As Integer
+        Try
+            Dim cantidad As Integer = dataProveedor.EncontrarProveedoresCantidad(consulta, limite)
+
+            Return cantidad
+        Catch ex As Exception
+            MsgBox(ex.Message & " BLProveedor")
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function ObtenerProveedores(consulta As String, pagina As Integer, limite As Integer) As List(Of Proveedor)
+        Try
+            Dim proveedores As List(Of Proveedor) = dataProveedor.EncontrarProveedores(consulta, pagina, limite)
+
+            Return proveedores
+        Catch ex As Exception
+            MsgBox(ex.Message & " BLProveedor")
+            Return Nothing
+        End Try
+    End Function
 End Class

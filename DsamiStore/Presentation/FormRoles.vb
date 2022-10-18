@@ -65,6 +65,7 @@ Public Class FormRoles
 
             tbPagina.Text = _pagina
 
+            _totalPagina = _rolNegocio.ObtenerRolesCantidad(_consulta, _limite)
 
             If _pagina = 1 Then
                 btnAnterior.Enabled = False
@@ -77,8 +78,6 @@ Public Class FormRoles
             Else
                 btnSiguiente.Enabled = True
             End If
-
-            _totalPagina = _rolNegocio.ObtenerRolesCantidad(_consulta, _limite)
 
             Dim roles As List(Of Roles) = _rolNegocio.ObtenerRoles(_consulta, _pagina, _limite)
 

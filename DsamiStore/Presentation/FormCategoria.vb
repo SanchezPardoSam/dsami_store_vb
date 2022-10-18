@@ -47,6 +47,8 @@
 
             tbPagina.Text = _pagina
 
+            _totalPagina = _categoriaNegocio.ObtenerCategoriasCantidad(_consulta, _limite)
+
             If _pagina = 1 Then
                 btnAnterior.Enabled = False
             Else
@@ -58,8 +60,6 @@
             Else
                 btnSiguiente.Enabled = True
             End If
-
-            _totalPagina = _categoriaNegocio.ObtenerCategoriasCantidad(_consulta, _limite)
 
             Dim categorias As List(Of Categoria) = _categoriaNegocio.ObtenerCategorias(_consulta, _pagina, _limite)
 

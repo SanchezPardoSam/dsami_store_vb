@@ -304,6 +304,81 @@ Public Class Proveedor
         End Try
     End Function
 
+    Public Function EncontrarProveedoresCantidad(consulta As String, limite As Integer) As Integer
+        Try
+            Dim listClien As List(Of Roles)
+            listClien = New List(Of Roles)
+            Dim i As Integer = 0
+            conectar()
+            cmd = New SqlCommand("sp_proveedor_listar_paginacion_count @consulta, @limite")
+            cmd.Parameters.AddWithValue("@consulta", consulta)
+            cmd.Parameters.AddWithValue("@limite", limite)
+
+            cmd.Connection = con
+
+            Return cmd.ExecuteScalar()
+
+        Catch ex As Exception
+            MsgBox(ex.Message & " Proveedor")
+            Return Nothing
+        Finally
+            con.Close()
+        End Try
+    End Function
+
+    Public Function EncontrarProveedores(consulta As String, pagina As Integer, limite As Integer) As List(Of Proveedor)
+        Try
+            Dim proveedores As List(Of Proveedor) = New List(Of Proveedor)
+            Dim i As Integer = 0
+
+            conectar()
+
+            cmd = New SqlCommand("sp_proveedor_listar_paginacion @consulta, @pagina, @limite")
+            cmd.Parameters.AddWithValue("@consulta", consulta)
+            cmd.Parameters.AddWithValue("@pagina", pagina)
+            cmd.Parameters.AddWithValue("@limite", limite)
+
+            cmd.Connection = con
+
+            dr = cmd.ExecuteReader
+
+            If dr.HasRows Then
+                While dr.Read
+                    i += 1
+                    proveedores.Add(New Proveedor(
+                                 dr.Item("i_id_proveedor"),
+                                 dr.Item("v_direccion_ubicacion"),
+                                 dr.Item("v_razon_social_empresa"),
+                                 dr.Item("v_nombre_tipo_documento"),
+                                 dr.Item("v_valor_documento"),
+                                 dr.Item("v_nombre_pais"),
+                                 dr.Item("v_nombre_region"),
+                                 dr.Item("v_nombre_distrito"),
+                                 dr.Item("v_nombre_provincia"),
+                                  dr.Item("v_ruc_empresa"),
+                        dr.Item("i_id_persona"),
+                        dr.Item("v_nombre_persona"),
+                        dr.Item("v_apellido_paterno_persona"),
+                        dr.Item("v_apellido_materno_persona"),
+                        dr.Item("i_id_documento"),
+                        dr.Item("d_fecha_nacimiento_persona"),
+                        dr.Item("i_id_pais")
+                                   ))
+                End While
+
+                Return proveedores
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message & " Proveedor")
+            Return Nothing
+        Finally
+            con.Close()
+        End Try
+    End Function
+
     Public Function ConsultarProveedorID(codigo As String) As Proveedor
         Try
             Dim prov As Proveedor

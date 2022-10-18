@@ -62,6 +62,8 @@
 
             tbPagina.Text = _pagina
 
+            _totalPagina = _usuarioNegocio.ObtenerUsuariosCantidad(_consulta, _limite)
+
             If _pagina = 1 Then
                 btnAnterior.Enabled = False
             Else
@@ -74,7 +76,6 @@
                 btnSiguiente.Enabled = True
             End If
 
-            _totalPagina = _usuarioNegocio.ObtenerUsuariosCantidad(_consulta, _limite)
 
             Dim usuarios As List(Of Usuario) = _usuarioNegocio.ObtenerUsuarios(_consulta, _pagina, _limite)
 
