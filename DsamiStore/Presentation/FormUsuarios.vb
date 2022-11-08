@@ -134,4 +134,8 @@ Public Class FormUsuarios
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
     End Sub
+
+    Private Sub btnReporte_Click(sender As Object, e As EventArgs) Handles btnReporte.Click
+        UsuarioReporteForm.ShowDialog()
+    End Sub
 End Class
