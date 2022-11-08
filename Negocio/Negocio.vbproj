@@ -68,6 +68,7 @@
     <Compile Include="Class1.vb" />
     <Compile Include="DistritoNegocio.vb" />
     <Compile Include="DocumentoNegocio.vb" />
+    <Compile Include="EmpleadoNegocio.vb" />
     <Compile Include="EmpresaNegocio.vb" />
     <Compile Include="Encrypt.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

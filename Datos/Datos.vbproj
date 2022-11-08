@@ -70,6 +70,7 @@
     <Compile Include="Conexion.vb" />
     <Compile Include="DistritoDato.vb" />
     <Compile Include="DocumentoDato.vb" />
+    <Compile Include="EmpleadoDato.vb" />
     <Compile Include="EmpresaDato.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

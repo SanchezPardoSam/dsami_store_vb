@@ -64,11 +64,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Almacen.vb" />
     <Compile Include="Categoria.vb" />
     <Compile Include="Class1.vb" />
     <Compile Include="Distrito.vb" />
     <Compile Include="Documento.vb" />
+    <Compile Include="Empleado.vb" />
     <Compile Include="Empresa.vb" />
+    <Compile Include="Imagen.vb" />
+    <Compile Include="Marca.vb" />
+    <Compile Include="Moneda.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -89,6 +94,8 @@
     <Compile Include="Producto.vb" />
     <Compile Include="Proveedor.vb" />
     <Compile Include="Provincia.vb" />
+    <Compile Include="Recepcion.vb" />
+    <Compile Include="RecepcionDetalle.vb" />
     <Compile Include="Region.vb" />
     <Compile Include="Rol.vb" />
     <Compile Include="Usuario.vb" />
