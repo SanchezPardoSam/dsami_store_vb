@@ -1,5 +1,7 @@
-﻿Public Class FormEliminarProducto
-    Private _productoNegocio As BLProducto = New BLProducto()
+﻿Imports Negocio
+
+Public Class FormEliminarProducto
+    Private _productoNegocio As New ProductoNegocio
 
     Dim padre As FormProductos
 

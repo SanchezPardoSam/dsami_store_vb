@@ -1,5 +1,7 @@
-﻿Public Class FormProductos
-    Private _productoNegocio As BLProducto = New BLProducto()
+﻿Imports Negocio
+
+Public Class FormProductos
+    Private _productoNegocio As New ProductoNegocio
     Private _consulta As String = ""
     Private _pagina As Integer = 1
     Private _totalPagina As Integer = 1
@@ -61,7 +63,7 @@
 
             _totalPagina = _productoNegocio.ObtenerProductosCantidad(_consulta, _limite)
 
-            Dim productos As List(Of Producto) = _productoNegocio.ObtenerProductos(_consulta, _pagina, _limite)
+            Dim productos As List(Of Entidades.Producto) = _productoNegocio.ObtenerProductos(_consulta, _pagina, _limite)
 
             Dim i As Integer = 1
 
