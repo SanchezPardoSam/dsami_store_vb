@@ -1,17 +1,20 @@
-﻿Public Class frmInsertarProveedor
+﻿Imports Negocio
+
+Public Class frmInsertarProveedor
     Private padre As FormProveedores
-    Private blProveedor As New BLProveedor
-    Private blEmpresa As New BLEmpresa
-    Private blPais As New BLPais
-    Private blDocumento As New BLDocumento
-    Private blRegion As New BLRegion
-    Private blProvincia As New BLProvincia
-    Private blDistrito As New BLDistrito
+
+    Private blProveedor As New ProveedorNegocio
+    Private blEmpresa As New EmpresaNegocio
+    Private blPais As New PaisNegocio
+    Private blDocumento As New DocumentoNegocio
+    Private blRegion As New RegionNegocio
+    Private blProvincia As New ProvinciaNegocio
+    Private blDistrito As New DistritoNegocio
 
     Private listaPais As New List(Of Pais)
-    Private listaRegiones As New List(Of Region)
-    Private listaProvincias As New List(Of Provincia)
-    Private listaDistritos As New List(Of Distrito)
+    Private listaRegiones As New List(Of Entidades.Region)
+    Private listaProvincias As New List(Of Entidades.Provincia)
+    Private listaDistritos As New List(Of Entidades.Distrito)
 
     Private dtEmpresa As New DataTable()
     Private dtTipoDocumento As New DataTable()
@@ -169,7 +172,7 @@
         Try
 
 
-            Dim prov As New Proveedor()
+            Dim prov As New Entidades.Proveedor()
             prov.Nombre = txtName.Text
             prov.ApellidoMaterno = txtApellidoMaterno.Text
             prov.ApellidoPaterno = txtApellidoPaterno.Text

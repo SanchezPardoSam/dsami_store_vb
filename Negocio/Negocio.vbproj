@@ -66,6 +66,9 @@
   <ItemGroup>
     <Compile Include="CategoriaNegocio.vb" />
     <Compile Include="Class1.vb" />
+    <Compile Include="DistritoNegocio.vb" />
+    <Compile Include="DocumentoNegocio.vb" />
+    <Compile Include="EmpresaNegocio.vb" />
     <Compile Include="Encrypt.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -82,7 +85,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PaisNegocio.vb" />
     <Compile Include="ProductoNegocio.vb" />
+    <Compile Include="ProveedorNegocio.vb" />
+    <Compile Include="ProvinciaNegocio.vb" />
+    <Compile Include="RegionNegocio.vb" />
     <Compile Include="RolNegocio.vb" />
     <Compile Include="UsuarioNegocio.vb" />
   </ItemGroup>
