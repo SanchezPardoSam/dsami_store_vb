@@ -1,4 +1,5 @@
-﻿Imports Negocio
+﻿Imports Entidades
+Imports Negocio
 
 Public Class FormEditarProveedor
     Private _proveedorNegocio As New ProveedorNegocio
@@ -15,9 +16,9 @@ Public Class FormEditarProveedor
     Private blDistrito As New DistritoNegocio
 
     Private listaPais As New List(Of Pais)
-    Private listaRegiones As New List(Of Entidades.Region)
-    Private listaProvincias As New List(Of Entidades.Provincia)
-    Private listaDistritos As New List(Of Entidades.Distrito)
+    Private listaRegiones As New List(Of Region)
+    Private listaProvincias As New List(Of Provincia)
+    Private listaDistritos As New List(Of Distrito)
 
     Private dtEmpresa As New DataTable()
     Private dtTipoDocumento As New DataTable()
@@ -26,7 +27,7 @@ Public Class FormEditarProveedor
     Private dtProvincia As New DataTable()
     Private dtDistrito As New DataTable()
 
-    Private proveedor As Entidades.Proveedor
+    Private proveedor As Proveedor
 
     Dim codigo As String
 
@@ -264,7 +265,7 @@ Public Class FormEditarProveedor
 
             Dim codigo As String = padre.dgvProveedores.CurrentRow.Cells.Item(0).Value
 
-            Dim prov As New Entidades.Proveedor()
+            Dim prov As New Proveedor()
             prov.Id = codigo
             prov.Nombre = txtName.Text
             prov.ApellidoMaterno = txtApellidoMaterno.Text

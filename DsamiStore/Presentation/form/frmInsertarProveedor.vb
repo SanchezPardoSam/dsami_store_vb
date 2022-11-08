@@ -1,4 +1,5 @@
-﻿Imports Negocio
+﻿Imports Entidades
+Imports Negocio
 
 Public Class frmInsertarProveedor
     Private padre As FormProveedores
@@ -11,10 +12,11 @@ Public Class frmInsertarProveedor
     Private blProvincia As New ProvinciaNegocio
     Private blDistrito As New DistritoNegocio
 
-    Private listaPais As New List(Of Pais)
-    Private listaRegiones As New List(Of Entidades.Region)
-    Private listaProvincias As New List(Of Entidades.Provincia)
-    Private listaDistritos As New List(Of Entidades.Distrito)
+    Private listaPais As New List(Of Pais
+        )
+    Private listaRegiones As New List(Of Region)
+    Private listaProvincias As New List(Of Provincia)
+    Private listaDistritos As New List(Of Distrito)
 
     Private dtEmpresa As New DataTable()
     Private dtTipoDocumento As New DataTable()

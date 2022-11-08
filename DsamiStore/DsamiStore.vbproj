@@ -99,39 +99,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business Logic\BLCategoria.vb" />
-    <Compile Include="Business Logic\BLDistrito.vb" />
-    <Compile Include="Business Logic\BLDocumento.vb" />
-    <Compile Include="Business Logic\BLEmpleado.vb" />
-    <Compile Include="Business Logic\BLEmpresa.vb" />
-    <Compile Include="Business Logic\BLPais.vb" />
-    <Compile Include="Business Logic\BLProducto.vb" />
-    <Compile Include="Business Logic\BLProveedor.vb" />
-    <Compile Include="Business Logic\BLProvincia.vb" />
-    <Compile Include="Business Logic\BLRegion.vb" />
-    <Compile Include="Business Logic\BLRol.vb" />
-    <Compile Include="Business Logic\BLUsuario.vb" />
-    <Compile Include="Data\Almacen.vb" />
-    <Compile Include="Data\Categoria.vb" />
-    <Compile Include="Data\conexion.vb" />
-    <Compile Include="Data\Distrito.vb" />
-    <Compile Include="Data\Documento.vb" />
-    <Compile Include="Data\Empleado.vb" />
-    <Compile Include="Data\Empresa.vb" />
-    <Compile Include="Business Logic\Encrypt.vb" />
-    <Compile Include="Data\Imagen.vb" />
-    <Compile Include="Data\Marca.vb" />
-    <Compile Include="Data\Moneda.vb" />
-    <Compile Include="Data\Pais.vb" />
-    <Compile Include="Data\Persona.vb" />
-    <Compile Include="Data\Producto.vb" />
-    <Compile Include="Data\Proveedor.vb" />
-    <Compile Include="Data\Provincia.vb" />
-    <Compile Include="Data\Recepcion.vb" />
-    <Compile Include="Data\RecepcionDetalle.vb" />
-    <Compile Include="Data\Region.vb" />
-    <Compile Include="Data\Roles.vb" />
-    <Compile Include="Data\Usuario.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
