@@ -1,7 +1,9 @@
-﻿Imports System.Data.SqlClient
+﻿Imports Entidades
+Imports Negocio
 
 Public Class FormRoles
-    Private _rolNegocio As BLRol = New BLRol()
+    Private _rolNegocio As New RolNegocio
+
     Private _consulta As String = ""
     Private _pagina As Integer = 1
     Private _totalPagina As Integer = 1
@@ -79,7 +81,7 @@ Public Class FormRoles
                 btnSiguiente.Enabled = True
             End If
 
-            Dim roles As List(Of Roles) = _rolNegocio.ObtenerRoles(_consulta, _pagina, _limite)
+            Dim roles As List(Of Rol) = _rolNegocio.ObtenerRoles(_consulta, _pagina, _limite)
 
             Dim i As Integer = 1
 
