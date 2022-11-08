@@ -1,5 +1,7 @@
-﻿Public Class FormCategoria
-    Private _categoriaNegocio As BLCategoria = New BLCategoria()
+﻿Imports Negocio
+
+Public Class FormCategoria
+    Private _categoriaNegocio As New CategoriaNegocio
     Private _consulta As String = ""
     Private _pagina As Integer = 1
     Private _totalPagina As Integer = 1
@@ -61,7 +63,7 @@
                 btnSiguiente.Enabled = True
             End If
 
-            Dim categorias As List(Of Categoria) = _categoriaNegocio.ObtenerCategorias(_consulta, _pagina, _limite)
+            Dim categorias As List(Of Entidades.Categoria) = _categoriaNegocio.ObtenerCategorias(_consulta, _pagina, _limite)
 
             Dim i As Integer = 1
 

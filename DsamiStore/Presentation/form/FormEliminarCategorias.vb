@@ -1,5 +1,7 @@
-﻿Public Class FormEliminarCategorias
-    Private _categoriaNegocio As BLCategoria = New BLCategoria()
+﻿Imports Negocio
+
+Public Class FormEliminarCategorias
+    Private _categoriaNegocio As New CategoriaNegocio
 
     Dim padre As FormCategoria
 
