@@ -1,6 +1,8 @@
-﻿Public Class FormInsertarUsuarios
-    Private _usuarioNegocio As New BLUsuario
-    Private _rolNegocio As New BLRol
+﻿Imports Negocio
+
+Public Class FormInsertarUsuarios
+    Private _usuarioNegocio As New UsuarioNegocio
+    Private _rolNegocio As New RolNegocio
     Private _empleadoNegocio As New BLEmpleado
 
     Dim padre As FormUsuarios

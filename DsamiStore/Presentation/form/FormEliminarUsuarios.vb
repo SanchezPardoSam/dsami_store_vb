@@ -1,5 +1,7 @@
-﻿Public Class FormEliminarUsuarios
-    Private _usuarioNegocio As BLUsuario = New BLUsuario()
+﻿Imports Negocio
+
+Public Class FormEliminarUsuarios
+    Private _usuarioNegocio As New UsuarioNegocio
 
     Dim padre As FormUsuarios
 

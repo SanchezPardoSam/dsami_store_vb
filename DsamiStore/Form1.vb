@@ -1,7 +1,7 @@
-﻿Imports System.Security.Principal
+﻿Imports Negocio
 
 Public Class Form1
-    Private _usuarioNegocio As BLUsuario = New BLUsuario()
+    Private _usuarioNegocio As New UsuarioNegocio
 
     Private Shared panelInicio As Form1
 
@@ -48,7 +48,7 @@ Public Class Form1
         End If
 
         Try
-            Dim usuario As Usuario = _usuarioNegocio.Ingresar(tbNombreUsuario.Text, tbClave.Text)
+            Dim usuario As Entidades.Usuario = _usuarioNegocio.Ingresar(tbNombreUsuario.Text, tbClave.Text)
 
             Dim prin As New Principal
 

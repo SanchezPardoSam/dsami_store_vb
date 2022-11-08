@@ -1,5 +1,8 @@
-﻿Public Class FormUsuarios
-    Private _usuarioNegocio As BLUsuario = New BLUsuario()
+﻿Imports Negocio
+
+Public Class FormUsuarios
+    Private _usuarioNegocio As New UsuarioNegocio
+
     Private _consulta As String = ""
     Private _pagina As Integer = 1
     Private _totalPagina As Integer = 1
@@ -77,7 +80,7 @@
             End If
 
 
-            Dim usuarios As List(Of Usuario) = _usuarioNegocio.ObtenerUsuarios(_consulta, _pagina, _limite)
+            Dim usuarios As List(Of Entidades.Usuario) = _usuarioNegocio.ObtenerUsuarios(_consulta, _pagina, _limite)
 
             Dim i As Integer = 1
 

@@ -1,17 +1,19 @@
-﻿Public Class FormEditarUsuarios
-    Private _usuarioNegocio As New BLUsuario
-    Private _rolNegocio As New BLRol
+﻿Imports Negocio
+
+Public Class FormEditarUsuarios
+    Private _usuarioNegocio As New UsuarioNegocio
+    Private _rolNegocio As New RolNegocio
     Private _empleadoNegocio As New BLEmpleado
 
     Dim padre As FormUsuarios
 
-    Private listaRol As New List(Of Roles)
+    Private listaRol As New List(Of Entidades.Rol)
     Private listaEmpleado As New List(Of Empleado)
 
     Private dtRol As New DataTable()
     Private dtEmpleado As New DataTable()
 
-    Private usuario As Usuario
+    Private usuario As Entidades.Usuario
 
     Public Sub New(padre As FormUsuarios)
         Me.padre = padre
