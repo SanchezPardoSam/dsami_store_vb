@@ -1,11 +1,15 @@
-﻿Public Class FormInsertarUsuarios
-    Private _usuarioNegocio As New BLUsuario
-    Private _rolNegocio As New BLRol
-    Private _empleadoNegocio As New BLEmpleado
+﻿Imports Entidades
+Imports Negocio
+
+Public Class FormInsertarUsuarios
+    Private _usuarioNegocio As New UsuarioNegocio
+    Private _rolNegocio As New RolNegocio
+    Private _empleadoNegocio As New EmpleadoNegocio
 
     Dim padre As FormUsuarios
 
-    Private listaRol As New List(Of Roles)
+    Private listaRol As New List(Of Rol
+        )
     Private listaEmpleado As New List(Of Empleado)
 
     Private dtRol As New DataTable()

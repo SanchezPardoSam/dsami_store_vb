@@ -1,12 +1,15 @@
-﻿Public Class FormEmpleados
-    Private _categoriaNegocio As BLEmpleado = New BLEmpleado()
+﻿Imports Negocio
+
+Public Class FormEmpleados
+    Private _categoriaNegocio As New CategoriaNegocio
+    Private _empleadoNegocio As New EmpleadoNegocio
+
     Private _consulta As String = ""
     Private _pagina As Integer = 1
     Private _totalPagina As Integer = 1
     Private _limite As Integer = 5
     Private _dtLimite As New DataTable()
 
-    Private _empleadoNegocio As BLEmpleado = New BLEmpleado()
 
     Public Sub New()
 
@@ -63,7 +66,7 @@
                 btnSiguiente.Enabled = True
             End If
 
-            Dim empleados As List(Of Empleado) = _empleadoNegocio.ObtenerEmpleados(_consulta, _pagina, _limite)
+            Dim empleados As List(Of Entidades.Empleado) = _empleadoNegocio.ObtenerEmpleados(_consulta, _pagina, _limite)
 
             Dim i As Integer = 1
 

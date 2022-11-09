@@ -109,4 +109,8 @@ Public Class Principal
 	Private Sub panelSecciones_Paint(sender As Object, e As PaintEventArgs) Handles panelSecciones.Paint
 
 	End Sub
+
+	Private Sub IconButton8_Click(sender As Object, e As EventArgs)
+		UsuarioReporteForm.ShowDialog()
+	End Sub
 End Class

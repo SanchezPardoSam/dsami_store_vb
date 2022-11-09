@@ -1,4 +1,7 @@
-﻿Public Class frmInsertarRol
+﻿Imports Negocio
+
+Public Class frmInsertarRol
+    Dim _rolNegocio As New RolNegocio
 
     Dim padre As FormRoles
 
@@ -18,9 +21,7 @@
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
-            Dim blRol As New BLRol
-
-            blRol.InsertarRol("R001", tbNombre.Text)
+            _rolNegocio.InsertarRol("R001", tbNombre.Text)
 
             padre.Cargardatos()
 

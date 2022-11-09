@@ -1,5 +1,8 @@
-﻿Public Class FormProveedores
-    Private _proveedorNegocio As BLProveedor = New BLProveedor()
+﻿Imports Negocio
+
+Public Class FormProveedores
+    Private _proveedorNegocio As New ProveedorNegocio
+
     Private _consulta As String = ""
     Private _pagina As Integer = 1
     Private _totalPagina As Integer = 1
@@ -62,7 +65,7 @@
             End If
 
 
-            Dim proveedores As List(Of Proveedor) = _proveedorNegocio.ObtenerProveedores(_consulta, _pagina, _limite)
+            Dim proveedores As List(Of Entidades.Proveedor) = _proveedorNegocio.ObtenerProveedores(_consulta, _pagina, _limite)
 
             Dim i As Integer = 1
 
@@ -130,5 +133,10 @@
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
+    End Sub
+
+    Private Sub btnReporte_Click(sender As Object, e As EventArgs) Handles btnReporte.Click
+        Dim form As New ProveedorReporteForm()
+        form.Show()
     End Sub
 End Class

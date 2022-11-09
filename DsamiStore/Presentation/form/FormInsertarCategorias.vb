@@ -1,7 +1,9 @@
-﻿Public Class FormInsertarCategorias
+﻿Imports Negocio
+
+Public Class FormInsertarCategorias
     Dim padre As FormCategoria
 
-    Private _categoriaNegocio As New BLCategoria
+    Private _categoriaNegocio As New CategoriaNegocio
 
     Public Sub New(padre As FormCategoria)
         Me.padre = padre

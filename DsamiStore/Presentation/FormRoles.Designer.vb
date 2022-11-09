@@ -131,7 +131,7 @@ Partial Class FormRoles
         Me.Label1.Location = New System.Drawing.Point(9, 15)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(91, 32)
+        Me.Label1.Size = New System.Drawing.Size(68, 30)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Roles"
         '

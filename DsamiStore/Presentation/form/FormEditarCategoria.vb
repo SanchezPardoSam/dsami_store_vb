@@ -1,5 +1,7 @@
-﻿Public Class FormEditarCategoria
-    Private _categoriaNegocio As BLCategoria = New BLCategoria()
+﻿Imports Negocio
+
+Public Class FormEditarCategoria
+    Private _categoriaNegocio As New CategoriaNegocio
 
     Dim padre As FormCategoria
 

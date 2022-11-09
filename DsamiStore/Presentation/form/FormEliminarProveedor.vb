@@ -1,5 +1,7 @@
-﻿Public Class FormEliminarProveedor
-    Private _proveedorNegocio As BLProveedor = New BLProveedor()
+﻿Imports Negocio
+
+Public Class FormEliminarProveedor
+    Private _proveedorNegocio As New ProveedorNegocio
 
     Dim padre As FormProveedores
 

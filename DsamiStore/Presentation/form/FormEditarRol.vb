@@ -1,5 +1,7 @@
-﻿Public Class FormEditarRol
-    Private _rolNegocio As BLRol = New BLRol()
+﻿Imports Negocio
+
+Public Class FormEditarRol
+    Private _rolNegocio As New RolNegocio
 
     Dim padre As FormRoles
 

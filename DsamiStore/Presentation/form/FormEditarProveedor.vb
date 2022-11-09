@@ -1,16 +1,19 @@
-﻿Public Class FormEditarProveedor
-    Private _proveedorNegocio As BLProveedor = New BLProveedor()
-    Private _documentoNegocio As BLDocumento = New BLDocumento()
-    Private _empresaNegocio As BLEmpresa = New BLEmpresa()
+﻿Imports Entidades
+Imports Negocio
+
+Public Class FormEditarProveedor
+    Private _proveedorNegocio As New ProveedorNegocio
+    Private _documentoNegocio As New DocumentoNegocio
+    Private _empresaNegocio As New EmpresaNegocio
 
     Private padre As FormProveedores
-    Private blProveedor As New BLProveedor
-    Private blEmpresa As New BLEmpresa
-    Private blPais As New BLPais
-    Private blDocumento As New BLDocumento
-    Private blRegion As New BLRegion
-    Private blProvincia As New BLProvincia
-    Private blDistrito As New BLDistrito
+    Private blProveedor As New ProveedorNegocio
+    Private blEmpresa As New EmpresaNegocio
+    Private blPais As New PaisNegocio
+    Private blDocumento As New DocumentoNegocio
+    Private blRegion As New RegionNegocio
+    Private blProvincia As New ProvinciaNegocio
+    Private blDistrito As New DistritoNegocio
 
     Private listaPais As New List(Of Pais)
     Private listaRegiones As New List(Of Region)

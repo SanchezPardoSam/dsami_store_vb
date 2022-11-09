@@ -23,6 +23,7 @@ Partial Class FormUsuarios
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnReporte = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.tbBuscar = New System.Windows.Forms.TextBox()
@@ -60,6 +61,20 @@ Partial Class FormUsuarios
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(812, 106)
         Me.Panel1.TabIndex = 3
+        '
+        'btnReporte
+        '
+        Me.btnReporte.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReporte.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReporte.ForeColor = System.Drawing.Color.White
+        Me.btnReporte.Location = New System.Drawing.Point(715, 265)
+        Me.btnReporte.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnReporte.Name = "btnReporte"
+        Me.btnReporte.Size = New System.Drawing.Size(87, 30)
+        Me.btnReporte.TabIndex = 9
+        Me.btnReporte.Text = "Ver reporte"
+        Me.btnReporte.UseVisualStyleBackColor = False
         '
         'btnEliminar
         '
@@ -140,6 +155,7 @@ Partial Class FormUsuarios
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.btnReporte)
         Me.Panel2.Controls.Add(Me.btnSiguiente)
         Me.Panel2.Controls.Add(Me.dgvUsuarios)
         Me.Panel2.Controls.Add(Me.btnAnterior)
@@ -216,7 +232,7 @@ Partial Class FormUsuarios
         '
         Me.cbLimite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbLimite.FormattingEnabled = True
-        Me.cbLimite.Location = New System.Drawing.Point(665, 268)
+        Me.cbLimite.Location = New System.Drawing.Point(173, 267)
         Me.cbLimite.Name = "cbLimite"
         Me.cbLimite.Size = New System.Drawing.Size(121, 21)
         Me.cbLimite.TabIndex = 19
@@ -224,7 +240,7 @@ Partial Class FormUsuarios
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(610, 271)
+        Me.Label3.Location = New System.Drawing.Point(118, 270)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(36, 13)
         Me.Label3.TabIndex = 20
@@ -275,4 +291,5 @@ Partial Class FormUsuarios
     Friend WithEvents nombre As DataGridViewTextBoxColumn
     Friend WithEvents email As DataGridViewTextBoxColumn
     Friend WithEvents rol As DataGridViewTextBoxColumn
+    Friend WithEvents btnReporte As Button
 End Class
