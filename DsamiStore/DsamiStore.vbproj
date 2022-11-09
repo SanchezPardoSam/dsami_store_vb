@@ -271,6 +271,20 @@
     <Compile Include="Presentation\Principal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentation\Reportes\ProveedorDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProveedorDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Reportes\ProveedorDataSet.vb">
+      <DependentUpon>ProveedorDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Reportes\ProveedorReporteForm.Designer.vb">
+      <DependentUpon>ProveedorReporteForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Reportes\ProveedorReporteForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentation\Reportes\UsuarioDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -369,6 +383,10 @@
     <EmbeddedResource Include="Presentation\Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Reportes\ProveedorReporte.rdlc" />
+    <EmbeddedResource Include="Presentation\Reportes\ProveedorReporteForm.resx">
+      <DependentUpon>ProveedorReporteForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Reportes\UsuarioReporte.rdlc" />
     <EmbeddedResource Include="Presentation\Reportes\UsuarioReporteForm.resx">
       <DependentUpon>UsuarioReporteForm.vb</DependentUpon>
@@ -386,6 +404,17 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Presentation\Reportes\ProveedorDataSet.xsc">
+      <DependentUpon>ProveedorDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Presentation\Reportes\ProveedorDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProveedorDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Presentation\Reportes\ProveedorDataSet.xss">
+      <DependentUpon>ProveedorDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Presentation\Reportes\UsuarioDataSet.xsc">
       <DependentUpon>UsuarioDataSet.xsd</DependentUpon>
     </None>
@@ -408,6 +437,21 @@
       <Name>Negocio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

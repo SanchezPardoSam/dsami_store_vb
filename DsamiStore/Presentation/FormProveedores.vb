@@ -134,4 +134,9 @@ Public Class FormProveedores
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
+
+    Private Sub btnReporte_Click(sender As Object, e As EventArgs) Handles btnReporte.Click
+        Dim form As New ProveedorReporteForm()
+        form.Show()
+    End Sub
 End Class
